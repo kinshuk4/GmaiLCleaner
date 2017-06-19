@@ -87,3 +87,10 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+.idea/*.iml
+.idea/*.xml
+
+.idea/inspectionProfiles/Project_Default.xml
+
+client_secret.json
