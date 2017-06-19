@@ -1,10 +1,16 @@
 from pocket import Pocket, PocketException
+import json
 
 
 class PythonPocketAPI:
     POCKET = None
 
-    def __init__(self, consumer_key, access_token):
+    def __init__(self, pocketJsonFile):
+        with open(pocketJsonFile) as data_file:
+            data = json.load(data_file)
+            self.init_pocket(data['consumer_key'], data['access_token'])
+
+    def init_pocket(self, consumer_key, access_token):
         self.POCKET = Pocket(
             consumer_key=consumer_key,
             access_token=access_token

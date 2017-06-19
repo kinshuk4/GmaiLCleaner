@@ -23,7 +23,6 @@ import datetime
 import csv
 import email.mime.text
 
-
 class PythonGmailAPI:
     GMAIL = None
     user_id = 'me'

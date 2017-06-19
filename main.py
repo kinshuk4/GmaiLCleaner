@@ -30,16 +30,16 @@ This script does the following:
 def extract_urls(message_data):
     # sender_set, header_set = getPocketSenders()
     urls = set()
-    exclude_headers = ['IndianWeb2.com', 'Indian Power Sector', 'OpIndia.com', 'Accommodation Times']
+
     subject = message_data['subject']
 
     if 'Label_181' in message_data['labelIds']:
-        if any(header.lower() in subject.lower() for header in exclude_headers):
+        if any(header.lower() in subject.lower() for header in conf.HEADERS_TO_EXCLUDE):
             return urls
         print(subject)
         body = message_data['body']
         str_body = str(body)
-        searched_urls = re.findall("(?P<url>https?://[^\s]+)", str_body)
+        searched_urls = re.findall(conf.URL_REGEX, str_body)
         for url in searched_urls:
             if not any(ignore_url in url.lower() for ignore_url in conf.IGNORE_URLS):
                 urls.add(url)
@@ -54,7 +54,7 @@ print("Initializing the gmail api")
 gmail = PythonGmailAPI(conf.GMAIL_CLIENT_SECRET_FILE)
 
 print("Initializing the pocket api")
-pocket = PythonPocketAPI(conf.POCKET_CONSUMER_KEY, conf.POCKET_ACCESS_TOKEN)
+pocket = PythonPocketAPI(conf.POCKET_CLIENT_SECRET_FILE)
 
 gmail_labels = conf.get_labels()
 mssg_list = []

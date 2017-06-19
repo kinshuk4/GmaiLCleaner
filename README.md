@@ -65,6 +65,16 @@ First, you have to [Create your consumer key](https://getpocket.com/developer/ap
 
 Pocket api used: https://github.com/rakanalh/pocket-api
 
+#### Updating the pocket_secret.json
+The pocket json file format:
+```json
+{
+  "consumer_key" : "<Your consumer key>",
+  "access_token" : "<Your access token>"
+}
+```
+Please put your consumer key and access token and that should be all.
+
 
 ### Disclaimer
 The information and code in these repositories was placed here for my own use but are released into the public domain in the hopes that they might be useful to others. Where I have used information from others I have tried to use and attribute it properly.

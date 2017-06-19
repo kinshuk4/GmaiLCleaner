@@ -98,3 +98,5 @@ client_secret.json
 test/*
 
 storage.json
+
+pocket_secret.json
