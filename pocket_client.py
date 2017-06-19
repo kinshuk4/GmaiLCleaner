@@ -2,18 +2,10 @@ from pocket import Pocket, PocketException
 
 
 class PythonPocketAPI:
-    _POCKET = None
+    POCKET = None
 
-    def __init__(self):
-        pass
-
-    @property
-    def POCKET(self):
-        return self._POCKET
-
-    @POCKET.setter
-    def POCKET(self, consumer_key, access_token):
-        self._POCKET = Pocket(
+    def __init__(self, consumer_key, access_token):
+        self.POCKET = Pocket(
             consumer_key=consumer_key,
             access_token=access_token
         )
@@ -34,8 +26,8 @@ class PythonPocketAPI:
 def main():
     # Fetch a list of articles
     p = Pocket(
-        consumer_key='',
-        access_token=''
+        consumer_key='<Your consumer key>',
+        access_token='<Your access token>'
     )
     try:
         print(p.retrieve(offset=0, count=10))

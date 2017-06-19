@@ -25,15 +25,10 @@ import email.mime.text
 
 
 class PythonGmailAPI:
-    _GMAIL = None
+    GMAIL = None
     user_id = 'me'
 
-    @property
-    def GMAIL(self):
-        return self._GMAIL
-
-    @GMAIL.setter
-    def GMAIL(self, secretJson):
+    def initialize(self, secretJson):
         # If modifying these scopes, delete your previously saved credentials by removing file storage.json.
         # Creating a storage.JSON file with authentication details
         SCOPES = 'https://mail.google.com/'  # we are using this to delete the emails
@@ -49,8 +44,8 @@ class PythonGmailAPI:
             creds = tools.run_flow(flow, store)
         self.GMAIL = discovery.build('gmail', 'v1', http=creds.authorize(Http()))
 
-    def __init__(self):
-        pass
+    def __init__(self, secretJson):
+        self.initialize(secretJson)
 
     def gmail_send(self, sender_address, to_address, subject, body):
         print('Sending message, please wait...')
@@ -180,8 +175,11 @@ class PythonGmailAPI:
         # Getting all the unread messages from Inbox
         # labelIds can be changed accordingly
         unread_msgs = self.GMAIL.users().messages().list(userId=user_id, labelIds=labelIds).execute()
+        print(unread_msgs)
         # We get a dictonary. Now reading values for the key 'messages'
-        mssg_list = unread_msgs['messages']
+        mssg_list = []
+        if 'messages' in unread_msgs:
+            mssg_list = unread_msgs['messages']
         print("Total unread messages in inbox: ", str(len(mssg_list)))
         return mssg_list
 
@@ -189,8 +187,8 @@ class PythonGmailAPI:
         all_labels = self.GMAIL.users().labels().list(userId=user_id).execute()
         return all_labels
 
-    def get_message_data(m_id, user_id='me'):
-        message = GMAIL.users().messages().get(userId=user_id, id=m_id).execute()  # fetch the message using API
+    def get_message_data(self, m_id, user_id='me'):
+        message = self.GMAIL.users().messages().get(userId=user_id, id=m_id).execute()  # fetch the message using API
         payload = message['payload']  # get payload of the message
         headr = payload['headers']  # get header of the payload
 
@@ -262,6 +260,35 @@ class PythonGmailAPI:
             print("Cannot read html")
             mssg_body = clean_two
         return mssg_body
+
+    @staticmethod
+    def prep_messages_for_delete(raw_messages):
+        message = {
+            'ids': []
+        }
+
+        message['ids'].extend([str(d['id']) for d in raw_messages])
+
+        print("got {0} ids".format(len(message['ids'])))
+        return message
+
+    def batch_delete_messages_given_read(self, mssg_list):
+        messages_list = PythonGmailAPI.prep_messages_for_delete(mssg_list)
+        self.batch_delete_messages(messages_list)
+
+    def batch_delete_messages(self, messages):
+        print("ready to delete {} messages".format(len(messages['ids'])))
+        user_id = "me"
+
+        self.GMAIL.users().messages().batchDelete(
+            userId=user_id,
+            body=messages
+        ).execute()
+
+        print("I deleted stuff!")
+
+    def mark_as_read(self, m_id, user_id='me'):
+        self.GMAIL.users().messages().modify(userId=user_id, id=m_id, body={'removeLabelIds': ['UNREAD']}).execute()
 
 
 def main():

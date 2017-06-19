@@ -1,5 +1,4 @@
-
-def getLabels():
+def get_labels():
     ## Choose labels
     label_id_one = 'INBOX'
     label_id_two = 'UNREAD'
@@ -16,10 +15,7 @@ IGNORE_URLS = ['feedburner.google.com/fb/a/mailunsubscribe?', 'subscribe.wordpre
                'whitecoatinvestor.us4.list-manage.com/vcard?u=106bf0eb2d98400b0754830dc&id=6ce0a43a91', '/profile?u',
                '/unsubscribe?u', 'financialexpress', 'nseindia.com', 'bseindia.com', 'gurufocus.com',
                'email.seekingalpha.com/account/unsubscribe', 'app.feedblitz.com', 'archive.feedblitz.com',
-               'www.feedblitz.com/privacy']
-
-
-
+               'www.feedblitz.com/privacy', 'email.aytooweb.com/t', 'awealthofcommonsense.updatemyprofile.com']
 
 
 def getPocketSenders():
@@ -29,6 +25,6 @@ def getPocketSenders():
     return sender_set, header_set
 
 
-POCKET_CONSUMER_KEY=""
-POCKET_ACCESS_TOKEN=""
-GMAIL_CLIENT_SECRET_FILE="client_secret.json"
+POCKET_CONSUMER_KEY = ""
+POCKET_ACCESS_TOKEN = ""
+GMAIL_CLIENT_SECRET_FILE = "client_secret.json"

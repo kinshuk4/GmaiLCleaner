@@ -96,3 +96,5 @@ ENV/
 client_secret.json
 
 test/*
+
+storage.json
