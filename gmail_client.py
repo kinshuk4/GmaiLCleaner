@@ -22,6 +22,7 @@ from datetime import datetime
 import datetime
 import csv
 import email.mime.text
+import gmail_cleaner_util as gcu
 
 
 class PythonGmailAPI:
@@ -228,20 +229,20 @@ class PythonGmailAPI:
                 mssg_parts = payload['parts']  # fetching the message parts
                 for i in (0, len(mssg_parts) - 1):
                     part_i = mssg_parts[i]  # fetching first element of the part
-                    if 'body' in part_i:
-                        part_body_i = part_i['body']  # fetching body of the message
-                        if 'data' in part_body_i:
-                            part_data_i = part_body_i['data']  # fetching data from the body
-                            part_data = part_data + part_data_i
-                    else:
-                        
+                    part_data_i = gcu.get_multi_level_val_from_dict(part_i, "body/data")
+                    if part_data_i is not None:
+                        part_data = part_data + part_data_i
+
             # If the message is small, it is directly available
             elif 'body' in payload:
-                part_data = payload['body']['data']
+                part_data = gcu.get_multi_level_val_from_dict(payload, "body/data")
             else:
                 print(message)
-
-            mssg_body = PythonGmailAPI.get_data_from_base64(part_data, temp_dict)
+            mssg_body = ""
+            if part_data is not None:
+                mssg_body = PythonGmailAPI.get_data_from_base64(part_data, temp_dict)
+                if mssg_body is None or '':
+                    print(message)
             # mssg_body is a readible form of message body
             # depending on the end user's requirements, it can be further cleaned
             # using regex, beautiful soup, or any other method
@@ -260,10 +261,12 @@ class PythonGmailAPI:
         clean_one = clean_one.replace("_", "/")  # decoding from Base64 to UTF-8
         clean_two = base64.b64decode(bytes(clean_one, 'UTF-8'))  # decoding from Base64 to UTF-8
         mssg_body = ''
-        soup = BeautifulSoup(clean_two, "lxml")
-        mssg_body = soup.body()
+        try:
+            soup = BeautifulSoup(clean_two, "lxml")
+            mssg_body = soup.body()
+        except Exception as e:
+            print("Not a valid html or xml, so moving back to raw text.")
         if mssg_body is None:
-            print("Cannot read html")
             mssg_body = clean_two
         return mssg_body
 
@@ -272,9 +275,7 @@ class PythonGmailAPI:
         message = {
             'ids': []
         }
-
         message['ids'].extend([str(d['id']) for d in raw_messages])
-
         print("got {0} ids".format(len(message['ids'])))
         return message
 

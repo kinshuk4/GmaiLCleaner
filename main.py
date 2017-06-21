@@ -17,6 +17,7 @@ from pocket_client import PythonPocketAPI
 import config as conf
 import re
 import uuid
+import os
 
 '''
 This script does the following:
@@ -45,22 +46,26 @@ def extract_urls(message_data):
                 urls.add(url)
             else:
                 print(url)
-                print("==========================================================")
-
-    print("--------------------------------------------------------------------")
     return urls
 
 
 def check_url(url):
     url_lower = url.lower()
-    if url_lower.endswith(".csv") \
-            | url_lower.endswith(".dat") \
-            | url_lower.endswith(".zip") | url_lower.endswith(".lst") | (";" in url_lower):
+    extensions_to_exclude = [".csv", ".dat", ".lst", ".zip", ".png", ".jpg", ".jsp"]
+    characters_exclusion = [";"]
+
+    extension = os.path.splitext(url_lower)[1]
+
+    if extension in extensions_to_exclude:
+        return False
+
+    if any(x in url_lower for x in characters_exclusion):
         return False
     if url_lower is None:
         print(url_lower)
     without_http = url_lower.replace("http://", "")
     without_http = without_http.replace("https://", "")
+    without_http = without_http.strip("/")
     parts = without_http.split('/')
     if len(parts) < 2:
         return False
@@ -106,12 +111,11 @@ print(len(all_urls2))
 unique_filename = "test/" + str(uuid.uuid4())
 thefile = open(unique_filename, 'w')
 
-for item in all_urls:
+for item in all_urls2:
     thefile.write("%s\n" % item)
 
-# print("Fav'ing all the urls")
-# pocket.favourite(all_urls2, 'g2p')
+print("Fav'ing all the urls")
+pocket.favourite(all_urls2, 'g2p')
 
-# print("Deleting all the emails from gmail now")
-# gmail.batch_delete_messages_given_read(mssg_list)
-# GMAIL.users().messages().batchDelete(userId=user_id, body=all_ids)
+print("Deleting all the emails from gmail now")
+gmail.batch_delete_messages_given_read(mssg_list)
