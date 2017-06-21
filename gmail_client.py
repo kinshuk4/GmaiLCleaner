@@ -23,6 +23,7 @@ import datetime
 import csv
 import email.mime.text
 
+
 class PythonGmailAPI:
     GMAIL = None
     user_id = 'me'
@@ -219,14 +220,22 @@ class PythonGmailAPI:
                 pass
 
         temp_dict['snippet'] = message['snippet']  # fetching message snippet
-
+        part_data = ""
         try:
+            # If the message is large, it comes in parts
             if 'parts' in payload:
                 # Fetching message body
                 mssg_parts = payload['parts']  # fetching the message parts
-                part_one = mssg_parts[0]  # fetching first element of the part
-                part_body = part_one['body']  # fetching body of the message
-                part_data = part_body['data']  # fetching data from the body
+                for i in (0, len(mssg_parts) - 1):
+                    part_i = mssg_parts[i]  # fetching first element of the part
+                    if 'body' in part_i:
+                        part_body_i = part_i['body']  # fetching body of the message
+                        if 'data' in part_body_i:
+                            part_data_i = part_body_i['data']  # fetching data from the body
+                            part_data = part_data + part_data_i
+                    else:
+                        
+            # If the message is small, it is directly available
             elif 'body' in payload:
                 part_data = payload['body']['data']
             else:
@@ -240,6 +249,7 @@ class PythonGmailAPI:
 
         except Exception as e:
             print(e)
+            print(message)
             pass
 
         return temp_dict
@@ -250,11 +260,8 @@ class PythonGmailAPI:
         clean_one = clean_one.replace("_", "/")  # decoding from Base64 to UTF-8
         clean_two = base64.b64decode(bytes(clean_one, 'UTF-8'))  # decoding from Base64 to UTF-8
         mssg_body = ''
-        try:
-            soup = BeautifulSoup(clean_two, "lxml")
-            mssg_body = soup.body()
-        except Exception as e:
-            print(e)
+        soup = BeautifulSoup(clean_two, "lxml")
+        mssg_body = soup.body()
         if mssg_body is None:
             print("Cannot read html")
             mssg_body = clean_two

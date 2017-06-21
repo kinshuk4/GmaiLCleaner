@@ -15,8 +15,7 @@ IGNORE_URLS = ['feedburner.google.com/fb/a/mailunsubscribe?', 'subscribe.wordpre
                'whitecoatinvestor.us4.list-manage.com/vcard?u=106bf0eb2d98400b0754830dc&id=6ce0a43a91', '/profile?u',
                '/unsubscribe?u', 'financialexpress', 'nseindia.com', 'bseindia.com', 'gurufocus.com',
                'email.seekingalpha.com/account/unsubscribe', 'app.feedblitz.com', 'archive.feedblitz.com',
-               'www.feedblitz.com/privacy', 'email.aytooweb.com/t', 'awealthofcommonsense.updatemyprofile.com']
-
+               'www.feedblitz.com/privacy', 'email.aytooweb.com/t', 'awealthofcommonsense.updatemyprofile.com', 'http://msgservice.runtastic.com/unsubscribe/', 'http://link.runtastic.com/u/nrd.php']
 
 def getPocketSenders():
     sender_set = {'Points and Figures <noreply+feedproxy@google.com>', 'Blogtrottr <busybee@blogtrottr.com>'

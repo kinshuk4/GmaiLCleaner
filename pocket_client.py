@@ -24,7 +24,14 @@ class PythonPocketAPI:
 
     def favourite(self, articles, tags):
         for article in articles:
-            self.POCKET.add(article, tags=tags)
+            for attempt in range(5):
+                try:
+                    self.POCKET.add(article, tags=tags)
+                except Exception as e:
+                    print(e)
+                    print("Attempt: " + str(attempt) + "-----" + article)
+                else:
+                    break
 
         self.POCKET.commit()
 

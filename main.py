@@ -50,6 +50,23 @@ def extract_urls(message_data):
     print("--------------------------------------------------------------------")
     return urls
 
+
+def check_url(url):
+    url_lower = url.lower()
+    if url_lower.endswith(".csv") \
+            | url_lower.endswith(".dat") \
+            | url_lower.endswith(".zip") | url_lower.endswith(".lst") | (";" in url_lower):
+        return False
+    if url_lower is None:
+        print(url_lower)
+    without_http = url_lower.replace("http://", "")
+    without_http = without_http.replace("https://", "")
+    parts = without_http.split('/')
+    if len(parts) < 2:
+        return False
+    return True
+
+
 print("Initializing the gmail api")
 gmail = PythonGmailAPI(conf.GMAIL_CLIENT_SECRET_FILE)
 
@@ -79,16 +96,22 @@ for mssg in mssg_list:
 
 print("Total messaged retrived: ", str(len(final_list)))
 print("Doing the batch jobs")
-print(len(all_urls))
+
+all_urls2 = []
+for url in all_urls:
+    if check_url(url):
+        all_urls2.append(url)
+
+print(len(all_urls2))
 unique_filename = "test/" + str(uuid.uuid4())
 thefile = open(unique_filename, 'w')
 
 for item in all_urls:
     thefile.write("%s\n" % item)
 
-print("Fav'ing all the urls")
-pocket.favourite(all_urls, 'g2p')
+# print("Fav'ing all the urls")
+# pocket.favourite(all_urls2, 'g2p')
 
-print("Deleting all the emails from gmail now")
-gmail.batch_delete_messages_given_read(mssg_list)
+# print("Deleting all the emails from gmail now")
+# gmail.batch_delete_messages_given_read(mssg_list)
 # GMAIL.users().messages().batchDelete(userId=user_id, body=all_ids)
