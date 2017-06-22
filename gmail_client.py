@@ -23,7 +23,8 @@ import datetime
 import csv
 import email.mime.text
 import gmail_cleaner_util as gcu
-
+import os
+import config as conf
 
 class PythonGmailAPI:
     GMAIL = None
