@@ -53,3 +53,4 @@ careful_footer_strings = "Unsubscribe"
 
 extensions_to_exclude = [".csv", ".dat", ".lst", ".zip", ".png", ".jpg", ".js", ".cms", ".dtd", '.gif']
 characters_exclusion = ['#comments', '#respond']
+DEBUG = False

@@ -3,7 +3,8 @@
 import uuid
 
 import config as conf
-from gmail_cleaner_util import extract_urls_from_body, get_mailbody_without_footer
+import gmail_cleaner_util as gcu
+from config import DEBUG
 from gmail_client import PythonGmailAPI
 from pocket_client import PythonPocketAPI
 
@@ -14,8 +15,6 @@ This script does the following:
 - Extract URLs and send it to pocket
 - Delete the email 
 '''
-
-DEBUG = False
 
 
 def exclude_message_on_subject(subject_string):
@@ -50,11 +49,11 @@ for mssg in mssg_list:
     if DEBUG:
         print("++++++++++++++++++++++ MESSAGE DICTIONARY ++++++++++++++++++++++++++++")
         print(message_dic)
-    message_body_without_footer = get_mailbody_without_footer(message_dic['body'])
+    message_body_without_footer = gcu.get_mailbody_without_footer(message_dic['body'])
     if DEBUG:
         print("++++++++++++++++++++++ MESSAGE BODY WITHOUT FOOTER ++++++++++++++++++++++++++++")
         print(message_body_without_footer)
-    urls = extract_urls_from_body(message_body_without_footer)
+    urls = gcu.extract_urls_from_body(message_body_without_footer)
     print(message_dic['subject'])
     print(urls)
     all_urls.update(urls)

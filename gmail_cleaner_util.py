@@ -3,7 +3,6 @@ import re
 
 import config as conf
 import url_util as uu
-from main import DEBUG
 
 
 def get_multi_level_val_from_dict(dct, path_str, default=None):
@@ -55,11 +54,11 @@ def extract_urls_from_body(body):
 
     # cleanup URLs
     cleanedup_urls = set()
-    if DEBUG:
+    if conf.DEBUG:
         print("+++++++++++++++++++++++++ Got URL Set 1 +++++++++++++++++++++++++++")
     for url in urls:
         url_lower = url.lower()
-        if DEBUG:
+        if conf.DEBUG:
             print(url_lower)
 
         for x in conf.characters_exclusion:
@@ -71,11 +70,11 @@ def extract_urls_from_body(body):
 
     # starting second set of rules
     all_urls_valid_for_pocket = []
-    if DEBUG:
+    if conf.DEBUG:
         print("+++++++++++++++++++++++++ Got URL Set 2 +++++++++++++++++++++++++++")
     for url in cleanedup_urls:
         # url needs encoding
-        if DEBUG:
+        if conf.DEBUG:
             print(url)
         if ';' in url:
             url = uu.decode_url(url)

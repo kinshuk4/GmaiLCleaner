@@ -1,5 +1,6 @@
 import urllib.request as ur
 
+
 def main():
     pass
 
@@ -31,15 +32,19 @@ def is_twitter_user_url(url):
 
     return False
 
+
 def remove_query_params(url):
     url_without_query_param = url.split('?')[0]
     return url_without_query_param
 
+
 def encode_url(url):
     return ur.quote(url)
 
+
 def decode_url(url):
     return ur.unquote(url)
+
 
 if __name__ == '__main__':
     main()

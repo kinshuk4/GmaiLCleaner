@@ -185,7 +185,17 @@ class PythonGmailAPI:
             mssg_list = unread_msgs['messages']
         print("Total unread messages in inbox: ", str(len(mssg_list)))
         return mssg_list
-
+    '''
+    Return list of label 
+    Sample label: 
+    {
+		'id': 'Label_187',
+		'name': 'some label names',
+		'messageListVisibility': 'show',
+		'labelListVisibility': 'labelShow',
+		'type': 'user'
+	}
+    '''
     def get_all_labels(self, user_id='me'):
         all_labels = self.GMAIL.users().labels().list(userId=user_id).execute()
         return all_labels
