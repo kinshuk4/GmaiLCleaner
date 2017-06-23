@@ -318,7 +318,7 @@ class PythonGmailAPI:
     '''
 
     def batch_modify_messages(self, message_list, addLabelIds, removeLabelIds=[], user_id='me'):
-        print("ready to modify {} messages".format(len(message_list['ids'])))
+        print("ready to modify {} messages".format(len(message_list)))
         # CREATE a message body
         label_body = {
             "ids": message_list,
@@ -336,7 +336,6 @@ class PythonGmailAPI:
         """ Move a Mail to Trash"""
         try:
             messages_list = PythonGmailAPI.get_message_id_list_from_raw_messages(mssg_lst)
-            print(messages_list)
             self.batch_modify_messages(messages_list, user_id=user_id, addLabelIds=['TRASH'])
         except errors.HttpError as error:
             print('An error occurred: %s' % error)
