@@ -26,6 +26,7 @@ import gmail_cleaner_util as gcu
 import os
 import config as conf
 
+
 class PythonGmailAPI:
     GMAIL = None
     user_id = 'me'
@@ -272,21 +273,27 @@ class PythonGmailAPI:
         return mssg_body
 
     @staticmethod
-    def prep_messages_for_delete(raw_messages):
+    def get_message_id_list_from_raw_messages(raw_messages):
+        message_list = []
+        message_list.extend([str(d['id']) for d in raw_messages])
+        print("got {0} ids".format(len(message_list)))
+        return message_list
+
+    # WARNING - This will actually delete the message forever
+    def batch_delete_messages_given_raw_messages(self, mssg_list, user_id='me'):
+        messages_list = PythonGmailAPI.get_message_id_list_from_raw_messages(mssg_list)
         message = {
-            'ids': []
+            'ids': messages_list
         }
-        message['ids'].extend([str(d['id']) for d in raw_messages])
-        print("got {0} ids".format(len(message['ids'])))
-        return message
+        self.batch_delete_messages(message, user_id=user_id)
 
-    def batch_delete_messages_given_read(self, mssg_list):
-        messages_list = PythonGmailAPI.prep_messages_for_delete(mssg_list)
-        self.batch_delete_messages(messages_list)
+    # WARNING - This will actually delete the message forever
+    '''
+        messages: {ids: [m_id1, m_id2...] }
+    '''
 
-    def batch_delete_messages(self, messages):
+    def batch_delete_messages(self, messages, user_id='me'):
         print("ready to delete {} messages".format(len(messages['ids'])))
-        user_id = "me"
 
         self.GMAIL.users().messages().batchDelete(
             userId=user_id,
@@ -295,16 +302,132 @@ class PythonGmailAPI:
 
         print("I deleted stuff!")
 
+    '''
+    message_list = list of message ids, addLabelIds=list of labels to be added, 
+    removeLabelIds = list of labels to be removed from all the messages
+    '''
+
+    def batch_modify_messages(self, message_list, addLabelIds, removeLabelIds=[], user_id='me'):
+        print("ready to modify {} messages".format(len(message_list['ids'])))
+        # CREATE a message body
+        label_body = {
+            "ids": message_list,
+            "removeLabelIds": removeLabelIds,
+            "addLabelIds": addLabelIds,
+        }
+        self.GMAIL.users().messages().batchModify(
+            userId=user_id,
+            body=label_body
+        ).execute()
+
+        print("I trashed stuff!")
+
+    def batch_trash_mail_given_raw_messages(self, mssg_lst, user_id='me'):
+        """ Move a Mail to Trash"""
+        try:
+            messages_list = PythonGmailAPI.get_message_id_list_from_raw_messages(mssg_lst)
+            print(messages_list)
+            self.batch_modify_messages(messages_list, user_id=user_id, addLabelIds=['TRASH'])
+        except errors.HttpError as error:
+            print('An error occurred: %s' % error)
+            # print(results)
+
+    def show_unread_email(self):
+        """
+        Fetch Unread emails from gmail and show them here.
+        """
+        service = self.GMAIL
+        try:
+            results = service.users().messages().list(userId='me').execute()
+        except errors.HttpError as e:
+            print('An error occurred: %s' % e)
+
+        messages = results.get('messages', [])
+
+        for message in messages:
+            message_id = message['id']
+            try:
+                msg_data = service.users().messages().get(userId='me', id=message_id).execute()
+                self.mark_as_read(message_id)
+            except errors.HttpError as e:
+                print('An error occurred: %s' % e)
+
+            payload = msg_data['payload']
+            labels = msg_data['labelIds']
+            attached_file = payload['filename']
+            body = payload['body']
+            headers = payload['headers']
+            snippet = msg_data['snippet']
+
+            print("--------------------------------------------------")
+            print("Message ID : " + message_id)
+            options = [
+                'To',
+                'From',
+                'Subject',
+                'Date',
+                'List-unsubscribe'
+            ]
+            unsubscribe_url = ""
+            for item in headers:
+                if item['name'] in options:
+                    print(item['name'] + " : " + item['value'])
+            print(",  ".join(labels))
+            print("Mail Snippet : " + snippet)
+            if attached_file != '':
+                print("Attached File : " + attached_file)
+                # DownloadAttachment(attachmentId)
+                # break
+
     def mark_as_read(self, m_id, user_id='me'):
         self.GMAIL.users().messages().modify(userId=user_id, id=m_id, body={'removeLabelIds': ['UNREAD']}).execute()
 
+    # WARNING - This will actually delete the message forever
+    def delete_message(self, messageId, user_id='me'):
+        """ Delete a message permanently"""
+
+        try:
+            results = self.GMAIL.users().messages().delete(userId=user_id, id=messageId).execute()
+            print("Message Deleted ..")
+        except errors.HttpError as error:
+            print('An error occurred: %s' % error)
+        print(results)
+
+    def trash_mail(self, messageId, user_id='me'):
+        """ Move a Mail to Trash"""
+        try:
+            results = self.GMAIL.users().messages().trash(userId=user_id, id=messageId).execute()
+            print("Mailed moved to trash..")
+        except errors.HttpError as error:
+            print('An error occurred: %s' % error)
+
+    def untrash_mail(self, messageId, user_id='me'):
+        """ Move a Mail to Trash"""
+        try:
+            results = self.GMAIL.users().messages().untrash(userId=user_id, id=messageId).execute()
+            print("Mailed moved to trash..")
+        except errors.HttpError as error:
+            print('An error occurred: %s' % error)
+
+    def save_to_drafts(self, user_id='me', message=""):
+
+        try:
+            message = (self.GMAIL.users().drafts().create(userId=user_id, body=message).execute())
+            print('Message Id: %s' % message['id'])
+            return message
+        except errors.HttpError as error:
+            print('An error occurred: %s' % error)
+
 
 def main():
-    sender_address = input('Sender address: ')
-    to_address = input('To address: ')
-    subject = input('Subject: ')
-    body = input('Body: ')
-    PythonGmailAPI().gmail_send(sender_address, to_address, subject, body)
+    # sender_address = input('Sender address: ')
+    # to_address = input('To address: ')
+    # subject = input('Subject: ')
+    # body = input('Body: ')
+    # PythonGmailAPI().gmail_send(sender_address, to_address, subject, body)
+    gmail = PythonGmailAPI(conf.GMAIL_CLIENT_SECRET_FILE)
+    labels = gmail.get_all_labels()
+    print(labels)
 
 
 if __name__ == '__main__':

@@ -28,6 +28,8 @@ This script does the following:
 - Delete the email 
 '''
 
+DEBUG = False
+
 
 def exclude_message_on_subject(subject_string):
     if any(header.lower() in subject_string.lower() for header in conf.HEADERS_TO_EXCLUDE):
@@ -48,19 +50,50 @@ def extract_urls_from_body(body):
         else:
             pass
             # print(url)
-    return urls
+
+    # cleanup URLs
+    cleanedup_urls = set()
+    if DEBUG:
+        print("+++++++++++++++++++++++++ Got URL Set 1 +++++++++++++++++++++++++++")
+    for url in urls:
+        url_lower = url.lower()
+        if DEBUG:
+            print(url_lower)
+
+        for x in conf.characters_exclusion:
+            if x in url_lower:
+                url_lower = url_lower.replace(x, "")
+                cleanedup_urls.add(url_lower)
+            else:
+                cleanedup_urls.add(url_lower)
+
+    # starting second set of rules
+    all_urls_valid_for_pocket = []
+    if DEBUG:
+        print("+++++++++++++++++++++++++ Got URL Set 2 +++++++++++++++++++++++++++")
+    for url in cleanedup_urls:
+        # url needs encoding
+        if DEBUG:
+            print(url)
+        if ';' in url:
+            url = uu.decode_url(url)
+            # TODO for some reason decoding is not working and not replacing &amp; to &
+            url = url.replace('&amp;', '&')
+        if check_url(url):
+            all_urls_valid_for_pocket.append(url)
+    return all_urls_valid_for_pocket
 
 
 def check_url(url):
     url_lower = url.lower()
-
-    extension = os.path.splitext(url_lower)[1]
+    url_without_query_param = uu.remove_query_params(url_lower)
+    extension = os.path.splitext(url_without_query_param)[1]
 
     if extension in conf.extensions_to_exclude:
         return False
 
-    if any(x in url_lower for x in conf.characters_exclusion):
-        return False
+    # if any(x in url_lower for x in conf.characters_exclusion):
+    #     return False
     if url_lower is None:
         print(url_lower)
     if uu.check_if_only_domain_name(url_lower):
@@ -113,10 +146,18 @@ for mssg in mssg_list:
     message_dic = gmail.get_message_data(m_id)
     if exclude_message_on_subject(message_dic['subject']):
         continue
-
+    if DEBUG:
+        print("++++++++++++++++++++++ MESSAGE DICTIONARY ++++++++++++++++++++++++++++")
+        print(message_dic)
     message_body_without_footer = get_mailbody_without_footer(message_dic['body'])
+    if DEBUG:
+        print("++++++++++++++++++++++ MESSAGE BODY WITHOUT FOOTER ++++++++++++++++++++++++++++")
+        print(message_body_without_footer)
     urls = extract_urls_from_body(message_body_without_footer)
+    print(message_dic['subject'])
+    print(urls)
     all_urls.update(urls)
+    print("------------------------------")
     final_list.append(message_dic)  # This will create a dictonary item in the final list
 
     # This will mark the messagea as read
@@ -125,20 +166,15 @@ for mssg in mssg_list:
 print("Total messaged retrived: ", str(len(final_list)))
 print("Doing the batch jobs")
 
-all_urls_valid_for_pocket = []
-for url in all_urls:
-    if check_url(url):
-        all_urls_valid_for_pocket.append(url)
-
-print(len(all_urls_valid_for_pocket))
+print(len(all_urls))
 unique_filename = "test/" + str(uuid.uuid4())
 thefile = open(unique_filename, 'w')
 
-for item in all_urls_valid_for_pocket:
+for item in all_urls:
     thefile.write("%s\n" % item)
 
 print("Fav'ing all the urls")
-pocket.favourite(all_urls_valid_for_pocket, 'g2p')
+pocket.favourite(all_urls, 'g2p')
 
-print("Deleting all the emails from gmail now")
-gmail.batch_delete_messages_given_read(mssg_list)
+print("Trashing all the emails from gmail now")
+gmail.batch_trash_mail_given_raw_messages(mssg_list)

@@ -90,3 +90,7 @@ https://github.com/chris-brown-nz/python-gmail-api
 https://github.com/rakanalh/pocket-api
 
 https://github.com/tapanpandita/pocket
+
+https://github.com/NadalVRoMa/Emilidos/blob/2668024f6684724ce123802de5b6c1148bc7751c/main.py
+
+https://github.com/amitkmr/Terminal-Geek/blob/9388cea460ffdc5638841e98bd9c2fd9838dbf15/Terminal%20Gmail/gmail.py
