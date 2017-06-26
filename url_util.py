@@ -35,6 +35,7 @@ def is_twitter_user_url(url):
 
 def remove_query_params(url):
     url_without_query_param = url.split('?')[0]
+    url_without_query_param = url_without_query_param.split('&')[0]
     return url_without_query_param
 
 

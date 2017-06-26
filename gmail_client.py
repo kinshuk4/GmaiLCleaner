@@ -319,6 +319,9 @@ class PythonGmailAPI:
 
     def batch_modify_messages(self, message_list, addLabelIds, removeLabelIds=[], user_id='me'):
         print("ready to modify {} messages".format(len(message_list)))
+        if len(message_list) == 0:
+            print("No message to modify")
+            return
         # CREATE a message body
         label_body = {
             "ids": message_list,
