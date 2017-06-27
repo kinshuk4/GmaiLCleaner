@@ -3,6 +3,7 @@ import re
 
 import config as conf
 import url_util as uu
+import special_subscription as ssb
 
 
 def get_multi_level_val_from_dict(dct, path_str, default=None):
@@ -122,3 +123,7 @@ def get_mailbody_without_footer_careful(mail_body):
                 return mail_without_footer
 
     return mail_body_str
+
+
+def get_url_for_sender_email_id(email_id):
+    return ssb.get_post_from_blog(conf.EMAIL_ID_TO_DOMAIN_DIC[email_id])

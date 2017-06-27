@@ -22,15 +22,27 @@ def check_if_only_domain_name(url):
     return False
 
 
-def is_twitter_user_url(url):
+def if_normal_social_url(url, domain_name):
     url_lower = url.lower()
     without_http = remove_protocol_from_url(url_lower)
-    without_twitter = without_http.replace("twitter.com/", "")
+    without_twitter = without_http.replace(domain_name + "/", "")
     only_user = without_twitter.split('/')
     if len(only_user) == 1:
         return True
 
     return False
+
+
+def is_twitter_user_url(url):
+    return if_normal_social_url(url, "twitter.com")
+
+
+def is_fb_user_url(url):
+    return if_normal_social_url(url, "www.facebook.com")
+
+
+def is_social_media_profile(url):
+    return is_twitter_user_url(url) or is_fb_user_url(url)
 
 
 def remove_query_params(url):
