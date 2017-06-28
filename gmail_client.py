@@ -27,6 +27,7 @@ import os
 import config as conf
 from color_util import PrintInColor as pic
 
+
 class PythonGmailAPI:
     GMAIL = None
     user_id = 'me'
@@ -245,7 +246,8 @@ class PythonGmailAPI:
                     part_i = mssg_parts[i]  # fetching first element of the part
                     part_data_i = gcu.get_multi_level_val_from_dict(part_i, "body/data")
                     if part_data_i is not None:
-                        part_data = part_data + part_data_i
+                        # NOTE: I am adding body part earliest body part first
+                        part_data = str(part_data_i) + part_data
 
             # If the message is small, it is directly available
             elif 'body' in payload:
@@ -277,9 +279,9 @@ class PythonGmailAPI:
         mssg_body = ''
         try:
             soup = BeautifulSoup(clean_two, "lxml")
-            mssg_body = soup.body()
+            mssg_body = str(soup.body())
         except Exception as e:
-            pic.red("Not a valid html or xml, so moving back to raw text.")
+            pic.red("Not a valid html or xml, so moving back to raw text.More: {}".format(e))
         if mssg_body is None:
             mssg_body = clean_two
         return mssg_body
@@ -345,7 +347,6 @@ class PythonGmailAPI:
         except errors.HttpError as error:
             pic.red('An error occurred: {}'.format(error))
 
-
     def show_unread_email(self):
         """
         Fetch Unread emails from gmail and show them here.
@@ -389,6 +390,7 @@ class PythonGmailAPI:
             print(",  ".join(labels))
             print("Mail Snippet : " + snippet)
             if attached_file != '':
+                print("Attached File : " + attached_file)
                 print("Attached File : " + attached_file)
                 # DownloadAttachment(attachmentId)
                 # break
