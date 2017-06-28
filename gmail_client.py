@@ -25,7 +25,7 @@ import email.mime.text
 import gmail_cleaner_util as gcu
 import os
 import config as conf
-
+from color_util import PrintInColor as pic
 
 class PythonGmailAPI:
     GMAIL = None
@@ -263,8 +263,8 @@ class PythonGmailAPI:
             temp_dict['body'] = mssg_body
 
         except Exception as e:
-            print(e)
-            print(message)
+            pic.red(e)
+            pic.red(message)
             pass
 
         return temp_dict
@@ -279,7 +279,7 @@ class PythonGmailAPI:
             soup = BeautifulSoup(clean_two, "lxml")
             mssg_body = soup.body()
         except Exception as e:
-            print("Not a valid html or xml, so moving back to raw text.")
+            pic.red("Not a valid html or xml, so moving back to raw text.")
         if mssg_body is None:
             mssg_body = clean_two
         return mssg_body
@@ -343,8 +343,8 @@ class PythonGmailAPI:
             messages_list = PythonGmailAPI.get_message_id_list_from_raw_messages(mssg_lst)
             self.batch_modify_messages(messages_list, user_id=user_id, addLabelIds=['TRASH'])
         except errors.HttpError as error:
-            print('An error occurred: {}' % error)
-            # print(results)
+            pic.red('An error occurred: {}'.format(error))
+
 
     def show_unread_email(self):
         """
