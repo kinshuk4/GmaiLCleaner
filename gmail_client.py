@@ -185,6 +185,7 @@ class PythonGmailAPI:
             mssg_list = unread_msgs['messages']
         print("Total unread messages in inbox: ", str(len(mssg_list)))
         return mssg_list
+
     '''
     Return list of label 
     Sample label: 
@@ -196,6 +197,7 @@ class PythonGmailAPI:
 		'type': 'user'
 	}
     '''
+
     def get_all_labels(self, user_id='me'):
         all_labels = self.GMAIL.users().labels().list(userId=user_id).execute()
         return all_labels
@@ -341,7 +343,7 @@ class PythonGmailAPI:
             messages_list = PythonGmailAPI.get_message_id_list_from_raw_messages(mssg_lst)
             self.batch_modify_messages(messages_list, user_id=user_id, addLabelIds=['TRASH'])
         except errors.HttpError as error:
-            print('An error occurred: %s' % error)
+            print('An error occurred: {}' % error)
             # print(results)
 
     def show_unread_email(self):
@@ -352,7 +354,7 @@ class PythonGmailAPI:
         try:
             results = service.users().messages().list(userId='me').execute()
         except errors.HttpError as e:
-            print('An error occurred: %s' % e)
+            print('An error occurred: {}' % e)
 
         messages = results.get('messages', [])
 
@@ -362,7 +364,7 @@ class PythonGmailAPI:
                 msg_data = service.users().messages().get(userId='me', id=message_id).execute()
                 self.mark_as_read(message_id)
             except errors.HttpError as e:
-                print('An error occurred: %s' % e)
+                print('An error occurred: {}' % e)
 
             payload = msg_data['payload']
             labels = msg_data['labelIds']
@@ -402,7 +404,7 @@ class PythonGmailAPI:
             results = self.GMAIL.users().messages().delete(userId=user_id, id=messageId).execute()
             print("Message Deleted ..")
         except errors.HttpError as error:
-            print('An error occurred: %s' % error)
+            print('An error occurred: {}' % error)
         print(results)
 
     def trash_mail(self, messageId, user_id='me'):
@@ -411,7 +413,7 @@ class PythonGmailAPI:
             results = self.GMAIL.users().messages().trash(userId=user_id, id=messageId).execute()
             print("Mailed moved to trash..")
         except errors.HttpError as error:
-            print('An error occurred: %s' % error)
+            print('An error occurred: {}'.format(error))
 
     def untrash_mail(self, messageId, user_id='me'):
         """ Move a Mail to Trash"""
@@ -419,16 +421,16 @@ class PythonGmailAPI:
             results = self.GMAIL.users().messages().untrash(userId=user_id, id=messageId).execute()
             print("Mailed moved to trash..")
         except errors.HttpError as error:
-            print('An error occurred: %s' % error)
+            print('An error occurred: {}'.format(error))
 
     def save_to_drafts(self, user_id='me', message=""):
 
         try:
             message = (self.GMAIL.users().drafts().create(userId=user_id, body=message).execute())
-            print('Message Id: %s' % message['id'])
+            print('Message Id: {}'.format(message['id']))
             return message
         except errors.HttpError as error:
-            print('An error occurred: %s' % error)
+            print('An error occurred: {}'.format(error))
 
 
 def main():
