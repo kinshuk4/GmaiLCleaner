@@ -24,9 +24,8 @@ IGNORE_URLS = ['feedburner.google.com/fb/a/mailunsubscribe?', 'subscribe.wordpre
                'http://email.mckinsey.com/T/v40000015cc6e879439386c8f4bbcfbb48/aec1b3cf7f944a450000021ef3a0bcdc/aec1b3cf-7f94-4a45-86db-eceda56f3a87',
                'twitter.com/share', 'www.facebook.com/sharer/', 'wordpress/?elp=unsubscribe',
                'https://el2.convertkit-mail.com/c/gkuwq772f5hd2no8/3ydpyg/aHR0cDovL2xlb2JhYmF1dGEuY29t',
-               'http://alphaideas.in/?author=1', 'w3.org/1999/xhtml'
+               'http://alphaideas.in/?author=1', 'w3.org/1999/xhtml', '0.gravatar.com/avatar'
                ]
-
 
 def getPocketSenders():
     sender_set = {'Points and Figures <noreply+feedproxy@google.com>', 'Blogtrottr <busybee@blogtrottr.com>'

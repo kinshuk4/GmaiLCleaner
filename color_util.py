@@ -1,7 +1,7 @@
 from colorama import Fore, Style
 import sys
 
-
+#https://stackoverflow.com/questions/287871/print-in-terminal-with-colors-using-python
 class PrintInColor:
     RED = '\033[91m'
     GREEN = '\033[92m'
