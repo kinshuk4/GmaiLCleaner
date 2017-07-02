@@ -24,8 +24,10 @@ IGNORE_URLS = ['feedburner.google.com/fb/a/mailunsubscribe?', 'subscribe.wordpre
                'http://email.mckinsey.com/T/v40000015cc6e879439386c8f4bbcfbb48/aec1b3cf7f944a450000021ef3a0bcdc/aec1b3cf-7f94-4a45-86db-eceda56f3a87',
                'twitter.com/share', 'www.facebook.com/sharer/', 'wordpress/?elp=unsubscribe',
                'https://el2.convertkit-mail.com/c/gkuwq772f5hd2no8/3ydpyg/aHR0cDovL2xlb2JhYmF1dGEuY29t',
-               'http://alphaideas.in/?author=1', 'w3.org/1999/xhtml', '0.gravatar.com/avatar', 'amazon-adsystem'
+               'http://alphaideas.in/?author=1', 'w3.org/1999/xhtml', '0.gravatar.com/avatar', 'amazon-adsystem',
+               'blogger.com/rearrange'
                ]
+
 
 def getPocketSenders():
     sender_set = {'Points and Figures <noreply+feedproxy@google.com>', 'Blogtrottr <busybee@blogtrottr.com>'
@@ -53,4 +55,5 @@ careful_footer_strings = "Unsubscribe"
 extensions_to_exclude = [".csv", ".dat", ".lst", ".zip", ".png", ".jpg", ".js", ".cms", ".dtd", '.gif']
 characters_exclusion = ['#comments', '#respond']
 DEBUG = False
-EMAIL_ID_TO_DOMAIN_DIC = {"support@zenhabits.net": "https://zenhabits.net/"}
+EMAIL_ID_TO_DOMAIN_DIC = {"support@zenhabits.net": "https://zenhabits.net/",
+                          "smallcapvaluefind@gmail.com": "http://smallcapvaluefind.blogspot.de/"}

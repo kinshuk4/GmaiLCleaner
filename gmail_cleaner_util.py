@@ -39,14 +39,9 @@ def rget(dct, keys, default=None):
     return rget(elem, keys, default)
 
 
-def extract_urls_from_body(body):
-    # sender_set, header_set = getPocketSenders()
+def ignore_urls_from_set(input_urls):
     urls = set()
-
-    # print(subject)
-    str_body = str(body)
-    searched_urls = re.findall(conf.URL_REGEX, str_body)
-    for url in searched_urls:
+    for url in input_urls:
         if not any(ignore_url in url.lower() for ignore_url in conf.IGNORE_URLS):
             urls.add(url)
         else:
@@ -83,6 +78,16 @@ def extract_urls_from_body(body):
             url = url.replace('&amp;', '&')
         if check_url(url):
             all_urls_valid_for_pocket.append(url)
+    return all_urls_valid_for_pocket
+
+
+def extract_urls_from_body(body):
+    # sender_set, header_set = getPocketSenders()
+
+    # print(subject)
+    str_body = str(body)
+    searched_urls = re.findall(conf.URL_REGEX, str_body)
+    all_urls_valid_for_pocket = ignore_urls_from_set(searched_urls)
     return all_urls_valid_for_pocket
 
 
@@ -126,4 +131,6 @@ def get_mailbody_without_footer_careful(mail_body):
 
 
 def get_url_for_sender_email_id(email_id):
-    return ssb.get_post_from_blog(conf.EMAIL_ID_TO_DOMAIN_DIC[email_id])
+    url = ssb.get_post_from_blog(conf.EMAIL_ID_TO_DOMAIN_DIC[email_id])
+
+    return ignore_urls_from_set([url])

@@ -57,7 +57,7 @@ for mssg in mssg_list:
     for known_senders_without_urls in conf.EMAIL_ID_TO_DOMAIN_DIC.keys():
         if known_senders_without_urls in message_dic['sender']:
             url_from_domain = gcu.get_url_for_sender_email_id(known_senders_without_urls)
-            urls.append(url_from_domain)
+            urls.extend(url_from_domain)
 
     print(message_dic['subject'])
     print(urls)
