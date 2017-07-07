@@ -25,7 +25,7 @@ IGNORE_URLS = ['feedburner.google.com/fb/a/mailunsubscribe?', 'subscribe.wordpre
                'twitter.com/share', 'www.facebook.com/sharer/', 'wordpress/?elp=unsubscribe',
                'https://el2.convertkit-mail.com/c/gkuwq772f5hd2no8/3ydpyg/aHR0cDovL2xlb2JhYmF1dGEuY29t',
                'http://alphaideas.in/?author=1', 'w3.org/1999/xhtml', 'gravatar.com/avatar', 'amazon-adsystem',
-               'blogger.com/rearrange'
+               'blogger.com/rearrange', 'blogger.com/null', 'startupdigest.com/digests/youth'
                ]
 
 
