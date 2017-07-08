@@ -23,14 +23,14 @@ IGNORE_URLS = ['feedburner.google.com/fb/a/mailunsubscribe?', 'subscribe.wordpre
                'http://email.mckinsey.com/T/v40000015cc6e879439386c8f4bbcfbb48/aec1b3cf7f944a450000021ef3a0bcdd/aec1b3cf-7f94-4a45-86db-eceda56f3a87',
                'http://email.mckinsey.com/T/v40000015cc6e879439386c8f4bbcfbb48/aec1b3cf7f944a450000021ef3a0bcdc/aec1b3cf-7f94-4a45-86db-eceda56f3a87',
                'twitter.com/share', 'www.facebook.com/sharer/', 'pic.twitter.com'
-               'wordpress/?elp=unsubscribe',
+                                                                'wordpress/?elp=unsubscribe',
                'https://el2.convertkit-mail.com/c/gkuwq772f5hd2no8/3ydpyg/aHR0cDovL2xlb2JhYmF1dGEuY29t',
                'http://alphaideas.in/?author=1', 'w3.org/1999/xhtml', 'gravatar.com/avatar', 'amazon-adsystem',
                'blogger.com/rearrange', 'blogger.com/null', 'startupdigest.com/digests/youth',
                # ignore wordpress and blogger category and label
                '/category/', '/tag/', '?like_actor=', '/search/label/', '/author/',
                # 1x1 pixel returned
-               'feeds.feedburner.com/~ff/', 'feeds.feedburner.com/~r/',
+               
 
                'quotes.wsj.com', 'on.wsj.com/2smztxf'
                ]
@@ -65,4 +65,4 @@ DEBUG = False
 EMAIL_ID_TO_DOMAIN_DIC = {"support@zenhabits.net": "https://zenhabits.net/",
                           "smallcapvaluefind@gmail.com": "http://smallcapvaluefind.blogspot.de/"}
 
-REDIRECT_URLS=['feeds.feedburner.com', ]
+REDIRECT_URLS = ['feeds.feedburner.com', ]

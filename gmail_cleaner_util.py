@@ -94,14 +94,13 @@ def cleanup_urls_after_visiting(input_urls):
     for url in input_urls:
         if not (url.startswith("http://") or url.startswith("https://") or url.startswith("www")):
             url = "http://" + url
-        correct_url, is_redirect = ru.is_valid_or_redirect(url)
+        correct_url, is_redirect = ru.is_valid_or_redirect_4_text(url)
 
         if correct_url is not None:
             urls.add(correct_url)
 
             if is_redirect:
                 print(correct_url)
-
     return urls
 
 
