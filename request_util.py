@@ -2,6 +2,8 @@ import requests
 import color_util as cu
 from requests.packages.urllib3.util.retry import Retry
 from requests.adapters import HTTPAdapter
+import time
+import re
 
 
 def get_response_retries(url):
@@ -14,6 +16,22 @@ def get_response_retries(url):
     s.mount('http://', HTTPAdapter(max_retries=retries))
 
     return s.get(url)
+
+
+def get_request_simple(url):
+    retry = 0
+    while retry < 5:
+        try:
+            if not (url.startswith("http://") or url.startswith("https://") or url.startswith("www")):
+                url = re.sub('^[^a-zA-z]*|[^a-zA-Z]*$', '', url)
+                url = "http://" + url
+            response = requests.get(url)
+            return response
+        except Exception as e:
+            retry = retry + 1
+            cu.PrintInColor.red(str(e) + "try----" + str(retry) + "---" + url)
+            time.sleep(3)  # delays for 3 seconds. You can Also Use Float Value.
+    return None
 
 
 def get_contenttype_from_url(url):
@@ -36,7 +54,9 @@ def get_contenttype_from_response(response):
 
 def is_valid_or_redirect_4_text(url):
     invalid_types = ('image/png', 'image/jpeg', 'image/gif', 'image/jpg')
-    r = requests.get(url)
+    r = get_request_simple(url)
+    if r is None:
+        return None, False
     correct_url, redirect_status = is_valid_or_redirect_from_response(r, url)
 
     if correct_url is not None:

@@ -30,9 +30,9 @@ IGNORE_URLS = ['feedburner.google.com/fb/a/mailunsubscribe?', 'subscribe.wordpre
                # ignore wordpress and blogger category and label
                '/category/', '/tag/', '?like_actor=', '/search/label/', '/author/',
                # 1x1 pixel returned
-               
 
-               'quotes.wsj.com', 'on.wsj.com/2smztxf'
+
+               'quotes.wsj.com', 'on.wsj.com/2smztxf', 'w3.org/provider/style/uri'
                ]
 
 
