@@ -54,6 +54,7 @@ for mssg in mssg_list:
         print("++++++++++++++++++++++ MESSAGE BODY WITHOUT FOOTER ++++++++++++++++++++++++++++")
         print(message_body_without_footer)
     urls = gcu.extract_urls_from_body(message_body_without_footer)
+    urls = list(urls)
     for known_senders_without_urls in conf.EMAIL_ID_TO_DOMAIN_DIC.keys():
         if known_senders_without_urls in message_dic['sender']:
             url_from_domain = gcu.get_url_for_sender_email_id(known_senders_without_urls)
