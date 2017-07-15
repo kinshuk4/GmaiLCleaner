@@ -1,9 +1,11 @@
-import requests
-import color_util as cu
-from requests.packages.urllib3.util.retry import Retry
-from requests.adapters import HTTPAdapter
-import time
 import re
+import time
+
+import requests
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
+
+from moonpie import color_util as cu
 
 
 def get_response_retries(url):

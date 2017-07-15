@@ -9,23 +9,23 @@ the link: https://developers.google.com/gmail/api/quickstart/python
 Also, client_secret.json should be saved in the same directory as this file
 '''
 
+import base64
+import email.mime.text
+import os
+import sys
+
 # Importing required libraries
 from apiclient import discovery
 from apiclient import errors
+from bs4 import BeautifulSoup
 from httplib2 import Http
 from oauth2client import file, client, tools
-import base64
-from bs4 import BeautifulSoup
-import re
-import time
-from datetime import datetime
-import datetime
-import csv
-import email.mime.text
-import gmail_cleaner_util as gcu
-import os
+
 import config as conf
-from color_util import PrintInColor as pic
+
+sys.path.append("/Users/kchandra/Lyf/Kode/SCM/Github/k2/GmaiLCleaner/moonpie")
+import moonpie
+from moonpie.color_util import PrintInColor as pic
 
 
 class PythonGmailAPI:
@@ -244,14 +244,14 @@ class PythonGmailAPI:
                 mssg_parts = payload['parts']  # fetching the message parts
                 for i in (0, len(mssg_parts) - 1):
                     part_i = mssg_parts[i]  # fetching first element of the part
-                    part_data_i = gcu.get_multi_level_val_from_dict(part_i, "body/data")
+                    part_data_i = moonpie.get_multi_level_val_from_dict(part_i, "body/data")
                     if part_data_i is not None:
                         # NOTE: I am adding body part earliest body part first
                         part_data = str(part_data_i) + part_data
 
             # If the message is small, it is directly available
             elif 'body' in payload:
-                part_data = gcu.get_multi_level_val_from_dict(payload, "body/data")
+                part_data = moonpie.get_multi_level_val_from_dict(payload, "body/data")
             else:
                 print(message)
             mssg_body = ""

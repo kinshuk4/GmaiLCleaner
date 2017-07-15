@@ -1,7 +1,8 @@
 import urllib.request as ur
+
 from bs4 import BeautifulSoup
-import config as conf
-import url_util as uu
+
+from moonpie import url_util as uu
 
 
 def main():
