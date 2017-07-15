@@ -13,7 +13,7 @@ def ignore_urls_from_set(input_urls):
     if conf.DEBUG:
         print("++++++++ URL SET 0 - Remove all the urls as marked in the IGNORE URL")
     for url in input_urls:
-        if not any(ignore_url in url.lower() for ignore_url in conf.IGNORE_URLS):
+        if not any(ignore_url in url.lower() for ignore_url in conf.POCKET_IGNORE_URL_LIST):
             urls.add(url)
         else:
             pass
@@ -87,7 +87,7 @@ def check_url(url):
     url_without_query_param = uu.remove_query_params(url_lower)
     extension = os.path.splitext(url_without_query_param.rstrip('/'))[1]
 
-    if extension in conf.EXCLUDED_EXTENSIONS:
+    if extension in conf.POCKET_EXCLUDED_EXTENSIONS:
         return False
 
     # if any(x in url_lower for x in conf.characters_exclusion):
@@ -103,7 +103,7 @@ def check_url(url):
 
 def get_mailbody_without_footer(mail_body):
     mail_body_str = str(mail_body)
-    for x in conf.footer_finder_strings:
+    for x in conf.FOOTER_FINDER_STRING_LIST:
         if x in mail_body_str:
             mail_without_footer = mail_body_str.split(x)[0]
             return mail_without_footer
@@ -113,7 +113,7 @@ def get_mailbody_without_footer(mail_body):
 def get_mailbody_without_footer_careful(mail_body):
     mail_body_str = str(mail_body)
     body_length = len(mail_body_str)
-    for x in conf.careful_footer_strings:
+    for x in conf.CAREFUL_FOOTER_STRING:
         if x in mail_body_str:
             location = mail_body_str.find(x)
             if location > 0.6 * body_length:

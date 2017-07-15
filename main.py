@@ -4,7 +4,7 @@
 import config as conf
 from gmailclient import PythonGmailAPI
 from pocketclient.pocket_client import PythonPocketAPI
-from aridcaravan import GmailLabelToPocket
+from aridcaravan import GmailPocket
 
 '''
 This script does the following:
@@ -24,5 +24,5 @@ gmail = PythonGmailAPI(conf.GMAIL_CLIENT_SECRET_FILE)
 print("Initializing the pocket api")
 pocket = PythonPocketAPI(conf.POCKET_CLIENT_SECRET_FILE)
 
-workflow1 = GmailLabelToPocket(gmail, pocket)
-workflow1.labelToPocket(conf.get_labels(), headersToExclude=conf.HEADERS_TO_EXCLUDE, emailIdToDomain=conf.EMAIL_ID_TO_DOMAIN_DIC)
+workflow1 = GmailPocket(gmail, pocket)
+workflow1.labelToPocket(conf.get_labels(), headersToExclude=conf.POCKET_SUBJECT_TO_EXCLUDE_LIST, emailIdToDomain=conf.EMAIL_ID_TO_DOMAIN_DIC)

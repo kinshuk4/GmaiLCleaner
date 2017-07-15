@@ -12,7 +12,7 @@ sys.path.append("/Users/kchandra/Lyf/Kode/SCM/Github/k2/GmaiLCleaner/aridcaravan
 
 import aridcaravan.gmail_cleaner_util as gcu
 
-class GmailLabelToPocket:
+class GmailPocket:
     def __init__(self, gmailClient, pocketClient):
         self.gmail = gmailClient
         self.pocket = pocketClient
@@ -38,7 +38,7 @@ class GmailLabelToPocket:
             all_ids.append(m_id)
 
             message_dic = self.gmail.get_message_data(m_id)
-            if GmailLabelToPocket.exclude_message_on_subject(headersToExclude, message_dic['subject']):
+            if GmailPocket.exclude_message_on_subject(headersToExclude, message_dic['subject']):
                 continue
             if debug:
                 print("++++++++++++++++++++++ MESSAGE DICTIONARY ++++++++++++++++++++++++++++")
