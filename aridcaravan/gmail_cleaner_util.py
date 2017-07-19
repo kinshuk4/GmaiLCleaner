@@ -28,7 +28,7 @@ def ignore_urls_from_set(input_urls):
         if conf.DEBUG:
             print(url_lower)
 
-        for x in conf.characters_exclusion:
+        for x in conf.CHARACTERS_EXCLUSION:
             if x in url_lower:
                 url_lower = url_lower.split(x)[0]  # for example ignore the part after '#'
                 cleanedup_urls.add(url_lower)
