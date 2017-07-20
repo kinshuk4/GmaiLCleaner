@@ -56,7 +56,7 @@ class Filter:
         # print(message_dic['subject'])
         if len(self.fromAddr) is not 0:
             # print(message_dic['fromEmail'])
-            if message_dic['fromEmail'] in self.fromAddr:
+            if message_dic['fromEmail'] in self.fromAddr or message_dic['fromEmail'].split('@')[1] in self.fromAddr:
                 result = True
             else:
                 return False
