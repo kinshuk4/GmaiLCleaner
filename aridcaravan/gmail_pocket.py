@@ -27,6 +27,7 @@ class GmailPocket:
         return False
 
     def messageToPocket(self, message_dic, debug=False, headersToExclude=set(), emailIdToDomain={}):
+        print(message_dic['subject'])
         if GmailPocket.exclude_message_on_subject(headersToExclude, message_dic['subject']):
             return
         if debug:
@@ -43,7 +44,7 @@ class GmailPocket:
                 url_from_domain = gcu.get_url_for_sender_email_id(known_senders_without_urls)
                 urls.extend(url_from_domain)
 
-        print(message_dic['subject'])
+
         print(urls)
         return urls
 
@@ -109,7 +110,8 @@ class GmailPocket:
                 urls = self.messageToPocket(message_dic, debug=debug, headersToExclude=headersToExclude,
                                             emailIdToDomain=emailIdToDomain)
                 filtered_mssg_list.append(mssg)
-                all_urls.update(urls)
+                if urls is not None:
+                    all_urls.update(urls)
                 print("------------------------------")
                 # final_list.append(message_dic)  # This will create a dictonary item in the final list
 
