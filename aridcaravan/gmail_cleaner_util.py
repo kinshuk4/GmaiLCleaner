@@ -18,7 +18,8 @@ def ignore_urls_from_set(input_urls):
         else:
             pass
             # print(url)
-
+    if conf.DEBUG:
+        print(urls)
     # cleanup URLs
     cleanedup_urls = set()
     if conf.DEBUG:
@@ -27,13 +28,14 @@ def ignore_urls_from_set(input_urls):
         url_lower = url.lower()
         if conf.DEBUG:
             print(url_lower)
-
+        # making url to lower case is a bug so don't do it as sites like feedburner don't open otherwise
+        # so undoing it
         for x in conf.CHARACTERS_EXCLUSION:
-            if x in url_lower:
-                url_lower = url_lower.split(x)[0]  # for example ignore the part after '#'
-                cleanedup_urls.add(url_lower)
+            if x in url:
+                url_without_strange_chars = url.split(x)[0]  # for example ignore the part after '#'
+                cleanedup_urls.add(url_without_strange_chars)
             else:
-                cleanedup_urls.add(url_lower)
+                cleanedup_urls.add(url)
     # starting second set of rules
     all_urls_valid_for_pocket = []
     if conf.DEBUG:

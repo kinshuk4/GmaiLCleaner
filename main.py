@@ -26,4 +26,4 @@ pocket = PythonPocketAPI(conf.POCKET_CLIENT_SECRET_FILE)
 
 workflow1 = GmailPocket(gmail, pocket)
 # workflow1.labelToPocket(conf.get_labels(), headersToExclude=conf.POCKET_SUBJECT_TO_EXCLUDE_LIST, emailIdToDomain=conf.EMAIL_ID_TO_DOMAIN_DIC)
-workflow1.filterToPocket(conf.GOOGLE_FILTER_CFINANCIAL, headersToExclude=conf.POCKET_SUBJECT_TO_EXCLUDE_LIST, emailIdToDomain=conf.EMAIL_ID_TO_DOMAIN_DIC)
+workflow1.filterToPocket(conf.GOOGLE_FILTER_CFINANCIAL, headersToExclude=conf.POCKET_SUBJECT_TO_EXCLUDE_LIST, emailIdToDomain=conf.EMAIL_ID_TO_DOMAIN_DIC, debug=conf.DEBUG)
