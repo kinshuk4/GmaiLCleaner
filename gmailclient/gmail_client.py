@@ -208,13 +208,13 @@ class PythonGmailAPI:
         payload = message['payload']  # get payload of the message
         headr = payload['headers']  # get header of the payload
 
-        temp_dict = {}
-        temp_dict['labelIds'] = message['labelIds']
+        mssg_dic = {}
+        mssg_dic['labelIds'] = message['labelIds']
 
         for one in headr:  # getting the Subject
             if one['name'] == 'Subject':
                 msg_subject = one['value']
-                temp_dict['subject'] = msg_subject
+                mssg_dic['subject'] = msg_subject
             else:
                 pass
 
@@ -231,11 +231,13 @@ class PythonGmailAPI:
         for three in headr:  # getting the Sender
             if three['name'] == 'From':
                 msg_from = three['value']
-                temp_dict['sender'] = msg_from
+                mssg_dic['from'] = msg_from
+                mssg_dic['fromName'] = msg_from.split(" <")[0]
+                mssg_dic['fromEmail'] = msg_from.split(" <")[1].replace(">", "")
             else:
                 pass
 
-        temp_dict['snippet'] = message['snippet']  # fetching message snippet
+        mssg_dic['snippet'] = message['snippet']  # fetching message snippet
         part_data = ""
         try:
             # If the message is large, it comes in parts
@@ -256,20 +258,20 @@ class PythonGmailAPI:
                 print(message)
             mssg_body = ""
             if part_data is not None:
-                mssg_body = PythonGmailAPI.get_data_from_base64(part_data, temp_dict)
+                mssg_body = PythonGmailAPI.get_data_from_base64(part_data, mssg_dic)
                 if mssg_body is None or '':
                     print(message)
             # mssg_body is a readible form of message body
             # depending on the end user's requirements, it can be further cleaned
             # using regex, beautiful soup, or any other method
-            temp_dict['body'] = mssg_body
+            mssg_dic['body'] = mssg_body
 
         except Exception as e:
             pic.red(e)
             pic.red(message)
             pass
 
-        return temp_dict
+        return mssg_dic
 
     @staticmethod
     def get_data_from_base64(b64_data, temp_dict):
