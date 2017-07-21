@@ -5,7 +5,7 @@ import config as conf
 from gmailclient import PythonGmailAPI
 from pocketclient.pocket_client import PythonPocketAPI
 from aridcaravan import GmailPocket
-
+import time
 '''
 This script does the following:
 - Go to Gmail inbox
@@ -16,14 +16,21 @@ This script does the following:
 
 import sys
 
+
 sys.path.append("/Users/kchandra/Lyf/Kode/SCM/Github/k2/GmaiLCleaner/moonpie")
 
-print("Initializing the gmail api")
-gmail = PythonGmailAPI(conf.GMAIL_CLIENT_SECRET_FILE)
+def main():
+    print("Initializing the gmail api")
+    gmail = PythonGmailAPI(conf.GMAIL_CLIENT_SECRET_FILE)
 
-print("Initializing the pocket api")
-pocket = PythonPocketAPI(conf.POCKET_CLIENT_SECRET_FILE)
+    print("Initializing the pocket api")
+    pocket = PythonPocketAPI(conf.POCKET_CLIENT_SECRET_FILE)
+    while True:
+        workflow1 = GmailPocket(gmail, pocket)
+        workflow1.labelToPocket(conf.get_labels(), headersToExclude=conf.POCKET_SUBJECT_TO_EXCLUDE_LIST, emailIdToDomain=conf.EMAIL_ID_TO_DOMAIN_DIC)
+        workflow1.filterToPocket(conf.GOOGLE_FILTER_CFINANCIAL, headersToExclude=conf.POCKET_SUBJECT_TO_EXCLUDE_LIST, emailIdToDomain=conf.EMAIL_ID_TO_DOMAIN_DIC, debug=conf.DEBUG)
+        time.sleep(900)
 
-workflow1 = GmailPocket(gmail, pocket)
-workflow1.labelToPocket(conf.get_labels(), headersToExclude=conf.POCKET_SUBJECT_TO_EXCLUDE_LIST, emailIdToDomain=conf.EMAIL_ID_TO_DOMAIN_DIC)
-workflow1.filterToPocket(conf.GOOGLE_FILTER_CFINANCIAL, headersToExclude=conf.POCKET_SUBJECT_TO_EXCLUDE_LIST, emailIdToDomain=conf.EMAIL_ID_TO_DOMAIN_DIC, debug=conf.DEBUG)
+
+if __name__ == '__main__':
+    main()

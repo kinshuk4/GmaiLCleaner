@@ -31,6 +31,7 @@ ALLOWED_SCOPES = ['https://mail.google.com/',
                   'https://www.googleapis.com/auth/gmail.compose',
                   'https://www.googleapis.com/auth/gmail.modify',
                   'https://www.googleapis.com/auth/gmail.send']
+from lru import LRUCacheDict
 
 
 class PythonGmailAPI:
@@ -52,6 +53,7 @@ class PythonGmailAPI:
 
     def __init__(self, secretJson):
         self.initialize(secretJson)
+        self.cache = LRUCacheDict(max_size=10000, expiration=24*60*60)#24 h cache
 
     def gmail_send(self, sender_address, to_address, subject, body):
         print('Sending message, please wait...')
@@ -206,6 +208,9 @@ class PythonGmailAPI:
         return all_labels
 
     def get_message_data(self, m_id, user_id='me'):
+        if m_id in self.cache:
+            print("Got from cache")
+            return self.cache[m_id]
         message = self.GMAIL.users().messages().get(userId=user_id, id=m_id).execute()  # fetch the message using API
         payload = message['payload']  # get payload of the message
         headr = payload['headers']  # get header of the payload
@@ -275,7 +280,7 @@ class PythonGmailAPI:
             pic.red(e)
             pic.red(message)
             pass
-
+        self.cache[m_id] = mssg_dic
         return mssg_dic
 
     @staticmethod
