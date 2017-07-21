@@ -53,7 +53,7 @@ class PythonGmailAPI:
 
     def __init__(self, secretJson):
         self.initialize(secretJson)
-        self.cache = LRUCacheDict(max_size=10000, expiration=24*60*60)#24 h cache
+        self.cache = LRUCacheDict(max_size=10000, expiration=24 * 60 * 60)  # 24 h cache
 
     def gmail_send(self, sender_address, to_address, subject, body):
         print('Sending message, please wait...')
@@ -104,6 +104,7 @@ class PythonGmailAPI:
         encoded_message = {'raw': base64.urlsafe_b64encode(message.as_bytes())}
         return encoded_message
 
+    # TODO: Make below work
     ''' SECTION NOT WORKING YET
     def __create_message_with_attachment(self, sender, to, subject, message_text, file):
       message = email.mime.multipart.MIMEMultipart()
@@ -164,10 +165,6 @@ class PythonGmailAPI:
             # If modifying these scopes, delete your previously saved credentials by removing file storage.json.
             # Creating a storage.JSON file with authentication details
             SCOPES = 'https://mail.google.com/'  # we are using this to delete the emails
-            # SCOPES = ['https://mail.google.com/',
-            #           'https://www.googleapis.com/auth/gmail.compose',
-            #           'https://www.googleapis.com/auth/gmail.modify',
-            #           'https://www.googleapis.com/auth/gmail.send']
             store = file.Storage('storage.json')
 
             creds = store.get()
@@ -179,28 +176,42 @@ class PythonGmailAPI:
             user_id = 'me'
         return GMAIL
 
+    '''
+    Getting all the messages from given labelIds list
+    if labelIds=[label1, label2] it returns message with both the labels = label1 and label2
+    '''
+
     def get_messages_for_labels(self, user_id='me', labelIds=[]):
-        # Getting all the unread messages from Inbox
-        # labelIds can be changed accordingly
-        unread_msgs = self.GMAIL.users().messages().list(userId=user_id, labelIds=labelIds).execute()
-        print(unread_msgs)
-        # We get a dictonary. Now reading values for the key 'messages'
-        mssg_list = []
-        if 'messages' in unread_msgs:
-            mssg_list = unread_msgs['messages']
-        print("Total unread messages in inbox: ", str(len(mssg_list)))
-        return mssg_list
+        try:
+            response = self.GMAIL.users().messages().list(userId=user_id, labelIds=labelIds).execute()
+            print(response)
+            # We get a dictonary. Now reading values for the key 'messages'
+            messages = []
+            if 'messages' in response:
+                messages.extend(response['messages'])
+
+            while 'nextPageToken' in response:
+                page_token = response['nextPageToken']
+                response = self.GMAIL.users().messages().list(userId=user_id,
+                                                              labelIds=labelIds,
+                                                              pageToken=page_token).execute()
+                messages.extend(response['messages'])
+
+            print("Total unread messages in inbox: ", str(len(messages)))
+            return messages
+        except errors.HttpError as error:
+            pic.red(str(error))
 
     '''
     Return list of label 
     Sample label: 
     {
-		'id': 'Label_187',
-		'name': 'some label names',
-		'messageListVisibility': 'show',
-		'labelListVisibility': 'labelShow',
-		'type': 'user'
-	}
+        'id': 'Label_187',
+        'name': 'some label names',
+        'messageListVisibility': 'show',
+        'labelListVisibility': 'labelShow',
+        'type': 'user'
+    }
     '''
 
     def get_all_labels(self, user_id='me'):

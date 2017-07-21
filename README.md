@@ -75,7 +75,10 @@ The pocket json file format:
 ```
 Please put your consumer key and access token and that should be all.
 
+### Python naming convention
+module_name, package_name, ClassName, method_name, ExceptionName, function_name, GLOBAL_CONSTANT_NAME, global_var_name, instance_var_name, function_parameter_name, local_var_name
 
+from: https://stackoverflow.com/a/8423697/3222727
 ### Disclaimer
 The information and code in these repositories was placed here for my own use but are released into the public domain in the hopes that they might be useful to others. Where I have used information from others I have tried to use and attribute it properly.
 
