@@ -27,6 +27,11 @@ sys.path.append("/Users/kchandra/Lyf/Kode/SCM/Github/k2/GmaiLCleaner/moonpie")
 import moonpie
 from moonpie.color_util import PrintInColor as pic
 
+ALLOWED_SCOPES = ['https://mail.google.com/',
+                  'https://www.googleapis.com/auth/gmail.compose',
+                  'https://www.googleapis.com/auth/gmail.modify',
+                  'https://www.googleapis.com/auth/gmail.send']
+
 
 class PythonGmailAPI:
     GMAIL = None
@@ -36,10 +41,7 @@ class PythonGmailAPI:
         # If modifying these scopes, delete your previously saved credentials by removing file storage.json.
         # Creating a storage.JSON file with authentication details
         SCOPES = 'https://mail.google.com/'  # we are using this to delete the emails
-        # SCOPES = ['https://mail.google.com/',
-        #           'https://www.googleapis.com/auth/gmail.compose',
-        #           'https://www.googleapis.com/auth/gmail.modify',
-        #           'https://www.googleapis.com/auth/gmail.send']
+
         store = file.Storage('storage.json')
 
         creds = store.get()
@@ -233,7 +235,10 @@ class PythonGmailAPI:
                 msg_from = three['value']
                 mssg_dic['from'] = msg_from
                 mssg_dic['fromName'] = msg_from.split(" <")[0]
-                mssg_dic['fromEmail'] = msg_from.split(" <")[1].replace(">", "")
+                if " <" in msg_from:
+                    mssg_dic['fromEmail'] = msg_from.split(" <")[1].replace(">", "")
+                else:
+                    mssg_dic['fromEmail'] = msg_from.split(" <")[0]
             else:
                 pass
 

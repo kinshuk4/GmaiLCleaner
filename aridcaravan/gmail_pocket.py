@@ -44,7 +44,6 @@ class GmailPocket:
                 url_from_domain = gcu.get_url_for_sender_email_id(known_senders_without_urls)
                 urls.extend(url_from_domain)
 
-
         print(urls)
         return urls
 
@@ -93,7 +92,7 @@ class GmailPocket:
                                  debug=debug)
 
     def filterToPocket(self, filterStr, debug=False, headersToExclude=set(), emailIdToDomain={}):
-        labelIds = [['INBOX'], ['SPAM']]
+        labelIds = [['INBOX'], ['SPAM']]  #
         mssg_list = []
         for gmail_labels_ids in labelIds:
             curr_mssg_list = self.gmail.get_messages_for_labels(labelIds=gmail_labels_ids)
@@ -116,7 +115,7 @@ class GmailPocket:
                 # final_list.append(message_dic)  # This will create a dictonary item in the final list
 
                 # This will mark the messagea as read
-                #self.gmail.mark_as_read(m_id)
+                # self.gmail.mark_as_read(m_id)
         print("Doing the batch jobs")
 
         print(len(all_urls))
@@ -129,7 +128,7 @@ class GmailPocket:
         print("Fav'ing all the urls")
         self.pocket.favourite(all_urls, 'g2p')
 
-        print("Trashing all the emails from gmail now")
+        print("Trashing all the emails from gmail now, got : " + str(len(filtered_mssg_list)))
 
         self.gmail.batch_trash_mail_given_raw_messages(filtered_mssg_list)
 

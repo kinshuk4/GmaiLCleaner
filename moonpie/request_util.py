@@ -22,7 +22,7 @@ def get_response_retries(url):
 
 def get_request_simple(url):
     retry = 0
-    while retry < 5:
+    while retry < 2:
         try:
             if not (url.startswith("http://") or url.startswith("https://") or url.startswith("www")):
                 url = re.sub('^[^a-zA-z]*|[^a-zA-Z]*$', '', url)
@@ -32,7 +32,7 @@ def get_request_simple(url):
         except Exception as e:
             retry = retry + 1
             cu.PrintInColor.red(str(e) + "try----" + str(retry) + "---" + url)
-            time.sleep(3)  # delays for 3 seconds. You can Also Use Float Value.
+            # time.sleep(0)  # delays for 3 seconds. You can Also Use Float Value.
     return None
 
 
@@ -50,7 +50,7 @@ def get_contenttype_from_response(response):
         return maintype
     except Exception as e:
         cu.PrintInColor.red(str(e))
-        print(response)
+        print(response.headers)
         return None
 
 

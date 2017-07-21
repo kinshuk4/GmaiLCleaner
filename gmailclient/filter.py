@@ -50,17 +50,19 @@ class Filter:
             excludes = set(stringAfterExclude.split(FILTER_DELIM))
         return cls(fromAddr=fromAddr, toAddr=toAddr, excludes=excludes, includes=includes, subject=subject)
 
-    # TODO: add case for toAddr, subjec and includes check. Currently just covers from and excludes
+    # TODO: add case for toAddr, subject and includes check. Currently just covers from and excludes
     def isMessageFiltered(self, message_dic):
+
         result = False
         # print(message_dic['subject'])
         if len(self.fromAddr) is not 0:
             # print(message_dic['fromEmail'])
+            print(message_dic['fromEmail'])
             if message_dic['fromEmail'] in self.fromAddr or message_dic['fromEmail'].split('@')[1] in self.fromAddr:
                 result = True
             else:
                 return False
-        # print("from:" + str(result))
+
         if len(self.toAddr) is not 0:
             if message_dic['to'] in self.toAddr:
                 result = True
@@ -84,7 +86,8 @@ class Filter:
             mssgSubject = message_dic['subject']
             sub_result = True
             for mssg_substr in self.excludes:
-                if mssg_substr in mssgSubject:
+                if mssg_substr.lower() in mssgSubject.lower():
+                    print(mssg_substr)
                     sub_result = False
                     break
             if sub_result:
