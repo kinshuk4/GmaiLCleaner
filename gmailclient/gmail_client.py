@@ -195,7 +195,8 @@ class PythonGmailAPI:
                 response = self.GMAIL.users().messages().list(userId=user_id,
                                                               labelIds=labelIds,
                                                               pageToken=page_token).execute()
-                messages.extend(response['messages'])
+                if 'messages' in response:
+                    messages.extend(response['messages'])
 
             print("Total unread messages in inbox: ", str(len(messages)))
             return messages
