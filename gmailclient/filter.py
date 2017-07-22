@@ -1,4 +1,5 @@
-FILTER_DELIM = " OR "
+FILTER_DELIM_ACTUAL = " OR "
+FILTER_DELIM = FILTER_DELIM_ACTUAL.lower()
 
 
 class Filter:
@@ -23,7 +24,7 @@ class Filter:
         subject = set()
         includes = set()
         excludes = set()
-
+        filterStr = filterStr.lower()
         if "from:" in filterStr:
             stringAfterFrom = filterStr[filterStr.index("from:") + len("from:") + 1:]
             allEmails = stringAfterFrom[:stringAfterFrom.index(")")]
@@ -58,7 +59,8 @@ class Filter:
         if len(self.fromAddr) is not 0:
             # print(message_dic['fromEmail'])
             print(message_dic['fromEmail'])
-            if message_dic['fromEmail'] in self.fromAddr or message_dic['fromEmail'].split('@')[1] in self.fromAddr:
+            if message_dic['fromEmail'].lower() in self.fromAddr or message_dic['fromEmail'].split('@')[
+                1].lower() in self.fromAddr:
                 result = True
             else:
                 return False
