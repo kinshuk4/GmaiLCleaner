@@ -255,7 +255,7 @@ class PythonGmailAPI:
                 if " <" in msg_from:
                     mssg_dic['fromEmail'] = msg_from.split(" <")[1].replace(">", "")
                 else:
-                    mssg_dic['fromEmail'] = msg_from.split(" <")[0]
+                    mssg_dic['fromEmail'] = msg_from.split(" <")[0].replace(">", "")
             else:
                 pass
 

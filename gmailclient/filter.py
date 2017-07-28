@@ -1,3 +1,9 @@
+import sys
+
+sys.path.append("/Users/kchandra/Lyf/Kode/SCM/Github/k2/GmaiLCleaner/moonpie")
+import moonpie
+from moonpie.color_util import PrintInColor as pic
+
 FILTER_DELIM_ACTUAL = " OR "
 FILTER_DELIM = FILTER_DELIM_ACTUAL.lower()
 
@@ -57,12 +63,17 @@ class Filter:
         result = False
         # print(message_dic['subject'])
         if len(self.fromAddr) is not 0:
-            # print(message_dic['fromEmail'])
-            print(message_dic['fromEmail'])
-            if message_dic['fromEmail'].lower() in self.fromAddr or message_dic['fromEmail'].split('@')[
-                1].lower() in self.fromAddr:
-                result = True
+            if 'fromEmail' in message_dic:
+                print(message_dic['fromEmail'])
+                if message_dic['fromEmail'].lower() in self.fromAddr:
+                    result = True
+                elif '@' in message_dic['fromEmail'] and message_dic['fromEmail'].split('@')[
+                    1].lower() in self.fromAddr:
+                    result = True
+                else:
+                    return False
             else:
+                pic.red("No fromEmail exists for header: " + str(message_dic))
                 return False
 
         if len(self.toAddr) is not 0:
