@@ -27,10 +27,7 @@ sys.path.append("/Users/kchandra/Lyf/Kode/SCM/Github/k2/GmaiLCleaner/moonpie")
 import moonpie
 from moonpie.color_util import PrintInColor as pic
 
-ALLOWED_SCOPES = ['https://mail.google.com/',
-                  'https://www.googleapis.com/auth/gmail.compose',
-                  'https://www.googleapis.com/auth/gmail.modify',
-                  'https://www.googleapis.com/auth/gmail.send']
+
 from lru import LRUCacheDict
 
 
@@ -225,41 +222,30 @@ class PythonGmailAPI:
             return self.cache[m_id]
         message = self.GMAIL.users().messages().get(userId=user_id, id=m_id).execute()  # fetch the message using API
         payload = message['payload']  # get payload of the message
-        headr = payload['headers']  # get header of the payload
+        headers = payload['headers']  # get header of the payload
 
-        mssg_dic = {}
-        mssg_dic['labelIds'] = message['labelIds']
+        message_dic = {}
+        message_dic['labelIds'] = message['labelIds']
 
-        for one in headr:  # getting the Subject
-            if one['name'] == 'Subject':
-                msg_subject = one['value']
-                mssg_dic['subject'] = msg_subject
-            else:
-                pass
-
-        for two in headr:  # getting the date
-            if two['name'] == 'Date':
-                # msg_date = two['value']
-                # date_parse = (parser.parse(msg_date))
-                # m_date = (date_parse.date())
-                # temp_dict['Date'] = str(m_date)
-                temp_str = 'hell'
-            else:
-                pass
-
-        for three in headr:  # getting the Sender
-            if three['name'] == 'From':
-                msg_from = three['value']
-                mssg_dic['from'] = msg_from
-                mssg_dic['fromName'] = msg_from.split(" <")[0]
+        for header in headers:  # getting the Subject
+            if header['name'] == 'Subject':
+                msg_subject = header['value']
+                message_dic['subject'] = msg_subject
+            elif header['name'] == 'Date':
+                msg_date = header['value']
+                message_dic['Date'] = str(msg_date)
+            elif header['name'] == 'From':
+                msg_from = header['value']
+                message_dic['from'] = msg_from
+                message_dic['fromName'] = msg_from.split(" <")[0]
                 if " <" in msg_from:
-                    mssg_dic['fromEmail'] = msg_from.split(" <")[1].replace(">", "")
+                    message_dic['fromEmail'] = msg_from.split(" <")[1].replace(">", "")
                 else:
-                    mssg_dic['fromEmail'] = msg_from.split(" <")[0].replace(">", "")
+                    message_dic['fromEmail'] = msg_from.split(" <")[0].replace(">", "")
             else:
                 pass
 
-        mssg_dic['snippet'] = message['snippet']  # fetching message snippet
+        message_dic['snippet'] = message['snippet']  # fetching message snippet
         part_data = ""
         try:
             # If the message is large, it comes in parts
@@ -280,20 +266,20 @@ class PythonGmailAPI:
                 print(message)
             mssg_body = ""
             if part_data is not None:
-                mssg_body = PythonGmailAPI.get_data_from_base64(part_data, mssg_dic)
+                mssg_body = PythonGmailAPI.get_data_from_base64(part_data, message_dic)
                 if mssg_body is None or '':
                     print(message)
             # mssg_body is a readible form of message body
             # depending on the end user's requirements, it can be further cleaned
             # using regex, beautiful soup, or any other method
-            mssg_dic['body'] = mssg_body
+            message_dic['body'] = mssg_body
 
         except Exception as e:
             pic.red(e)
             pic.red(message)
             pass
-        self.cache[m_id] = mssg_dic
-        return mssg_dic
+        self.cache[m_id] = message_dic
+        return message_dic
 
     @staticmethod
     def get_data_from_base64(b64_data, temp_dict):
