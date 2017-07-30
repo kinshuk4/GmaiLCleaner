@@ -9,10 +9,13 @@ the link: https://developers.google.com/gmail/api/quickstart/python
 Also, client_secret.json should be saved in the same directory as this file
 '''
 
+import re
+
+
+
 import base64
 import email.mime.text
 import os
-import sys
 
 # Importing required libraries
 from apiclient import discovery
@@ -22,11 +25,12 @@ from httplib2 import Http
 from oauth2client import file, client, tools
 
 import config as conf
+import sys
 
 sys.path.append("/Users/kchandra/Lyf/Kode/SCM/Github/k2/GmaiLCleaner/moonpie")
 import moonpie
 from moonpie.color_util import PrintInColor as pic
-
+from .util import GmailMessageUtil
 
 from lru import LRUCacheDict
 
@@ -52,17 +56,6 @@ class PythonGmailAPI:
         self.initialize(secretJson)
         self.cache = LRUCacheDict(max_size=10000, expiration=24 * 60 * 60)  # 24 h cache
 
-    def gmail_send(self, sender_address, to_address, subject, body):
-        print('Sending message, please wait...')
-        message = self.__create_message(sender_address, to_address, subject, body)
-        credentials = self.__get_credentials()
-        service = self.__build_service(credentials)
-        raw = message['raw']
-        raw_decoded = raw.decode("utf-8")
-        message = {'raw': raw_decoded}
-        message_id = self.__send_message(service, 'me', message)
-        print('Message sent. Message ID: ' + message_id)
-
     def __get_credentials(self):
         """Gets valid user credentials from storage.
         If nothing has been stored, or if the stored credentials are invalid,
@@ -84,7 +77,18 @@ class PythonGmailAPI:
             print('Storing credentials to ' + credential_path)
         return credentials
 
-    def __create_message(self, sender, to, subject, message_text):
+    def send_message(self, sender_address, to_address, subject, body):
+        print('Sending message, please wait...')
+        message = self.create_message(sender_address, to_address, subject, body)
+        credentials = self.__get_credentials()
+        service = self.__build_service(credentials)
+        raw = message['raw']
+        raw_decoded = raw.decode("utf-8")
+        message = {'raw': raw_decoded}
+        message_id = self.__send_message(service, 'me', message)
+        print('Message sent. Message ID: ' + message_id)
+
+    def create_message(self, sender, to, subject, message_text):
         """Create a message for an email.
         Args:
           sender: Email address of the sender.
@@ -200,22 +204,6 @@ class PythonGmailAPI:
         except errors.HttpError as error:
             pic.red(str(error))
 
-    '''
-    Return list of label 
-    Sample label: 
-    {
-        'id': 'Label_187',
-        'name': 'some label names',
-        'messageListVisibility': 'show',
-        'labelListVisibility': 'labelShow',
-        'type': 'user'
-    }
-    '''
-
-    def get_all_labels(self, user_id='me'):
-        all_labels = self.GMAIL.users().labels().list(userId=user_id).execute()
-        return all_labels
-
     def get_message_data(self, m_id, user_id='me'):
         if m_id in self.cache:
             print("Got from cache")
@@ -266,7 +254,7 @@ class PythonGmailAPI:
                 print(message)
             mssg_body = ""
             if part_data is not None:
-                mssg_body = PythonGmailAPI.get_data_from_base64(part_data, message_dic)
+                mssg_body = GmailMessageUtil.get_data_from_base64(part_data, message_dic)
                 if mssg_body is None or '':
                     print(message)
             # mssg_body is a readible form of message body
@@ -281,31 +269,9 @@ class PythonGmailAPI:
         self.cache[m_id] = message_dic
         return message_dic
 
-    @staticmethod
-    def get_data_from_base64(b64_data, temp_dict):
-        clean_one = b64_data.replace("-", "+")  # decoding from Base64 to UTF-8
-        clean_one = clean_one.replace("_", "/")  # decoding from Base64 to UTF-8
-        clean_two = base64.b64decode(bytes(clean_one, 'UTF-8'))  # decoding from Base64 to UTF-8
-        mssg_body = ''
-        try:
-            soup = BeautifulSoup(clean_two, "lxml")
-            mssg_body = str(soup.body())
-        except Exception as e:
-            pic.red("Not a valid html or xml, so moving back to raw text.More: {}".format(e))
-        if mssg_body is None:
-            mssg_body = clean_two
-        return mssg_body
-
-    @staticmethod
-    def get_message_id_list_from_raw_messages(raw_messages):
-        message_list = []
-        message_list.extend([str(d['id']) for d in raw_messages])
-        print("got {0} ids".format(len(message_list)))
-        return message_list
-
     # WARNING - This will actually delete the message forever
     def batch_delete_messages_given_raw_messages(self, mssg_list, user_id='me'):
-        messages_list = PythonGmailAPI.get_message_id_list_from_raw_messages(mssg_list)
+        messages_list = GmailMessageUtil.get_message_id_list_from_raw_messages(mssg_list)
         message = {
             'ids': messages_list
         }
@@ -352,7 +318,7 @@ class PythonGmailAPI:
     def batch_trash_mail_given_raw_messages(self, mssg_lst, user_id='me'):
         """ Move a Mail to Trash"""
         try:
-            messages_list = PythonGmailAPI.get_message_id_list_from_raw_messages(mssg_lst)
+            messages_list = GmailMessageUtil.get_message_id_list_from_raw_messages(mssg_lst)
             self.batch_modify_messages(messages_list, user_id=user_id, addLabelIds=['TRASH'])
         except errors.HttpError as error:
             pic.red('An error occurred: {}'.format(error))
@@ -444,6 +410,26 @@ class PythonGmailAPI:
         except errors.HttpError as error:
             print('An error occurred: {}'.format(error))
 
+    '''
+    Return list of label 
+    Sample label: 
+    {
+        'id': 'Label_187',
+        'name': 'some label names',
+        'messageListVisibility': 'show',
+        'labelListVisibility': 'labelShow',
+        'type': 'user'
+    }
+    '''
+
+    def get_all_labels(self, user_id='me'):
+        all_labels = self.GMAIL.users().labels().list(userId=user_id).execute()
+        return all_labels
+
+    def delete_label(self, label_id='', user_id='me'):
+        self.GMAIL.users().labels().delete(userId=user_id, id=label_id).execute()
+        print('Label id {} successfully deleted'.format(label_id))
+
 
 def main():
     # sender_address = input('Sender address: ')
@@ -453,7 +439,27 @@ def main():
     # PythonGmailAPI().gmail_send(sender_address, to_address, subject, body)
     gmail = PythonGmailAPI(conf.GMAIL_CLIENT_SECRET_FILE)
     labels = gmail.get_all_labels()
-    print(labels)
+    print(len(labels['labels']))
+    for label in labels['labels']:
+        print(label)
+        if label['type'] is 'system':
+            continue
+
+        # pic.yellow("Want to delete {}?".format(label['name']))
+        # m = re.search(r'\d+$', label['name'])
+        # if the string ends in digits m will be a Match object, or None otherwise.
+        # if m is not None:
+        #     print(m.group())
+        # choice = input("y/n - ")
+        if label['name'][-1].isdigit():
+            choice = 'y'
+        else:
+            choice = 'n'
+        if 'y' is choice:
+            pic.red(label['name'])
+            gmail.delete_label(label_id=label['id'])
+
+    # print(labels)
 
 
 if __name__ == '__main__':
