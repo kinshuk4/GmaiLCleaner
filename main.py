@@ -6,6 +6,7 @@ from gmailclient import PythonGmailAPI
 from pocketclient.pocket_client import PythonPocketAPI
 from aridcaravan import GmailPocket
 import time
+import datetime
 '''
 This script does the following:
 - Go to Gmail inbox
@@ -35,7 +36,11 @@ def main():
                                      emailIdToDomain=conf.EMAIL_ID_TO_DOMAIN_DIC, debug=conf.DEBUG)
         except Exception as e:
             pass
+        ts = time.time()
+        st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+        print("Last run completed at: {}".format(st))
         time.sleep(120)
+
 
 
 
