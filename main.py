@@ -35,7 +35,7 @@ def main():
                                      emailIdToDomain=conf.EMAIL_ID_TO_DOMAIN_DIC, debug=conf.DEBUG)
         except Exception as e:
             pass
-        time.sleep(900)
+        time.sleep(120)
 
 
 
