@@ -430,7 +430,13 @@ class PythonGmailAPI:
         self.GMAIL.users().labels().delete(userId=user_id, id=label_id).execute()
         print('Label id {} successfully deleted'.format(label_id))
 
+    def get_all_filters(self, user_id='me'):
+        all_filters = self.GMAIL.users().filters().list(userId=user_id).execute()
+        return all_filters
 
+    def get_filter(self, filterId, user_id='me'):
+        curr_filter = self.GMAIL.users().filters().get(userId=user_id, id=filterId).execute()
+        return curr_filter
 def main():
     # sender_address = input('Sender address: ')
     # to_address = input('To address: ')
