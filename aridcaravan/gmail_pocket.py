@@ -13,6 +13,7 @@ import pocketclient
 sys.path.append("/Users/kchandra/Lyf/Kode/SCM/Github/k2/GmaiLCleaner/aridcaravan")
 
 import aridcaravan.gmail_cleaner_util as gcu
+import uuid
 
 
 class GmailPocket:
@@ -21,12 +22,20 @@ class GmailPocket:
         self.pocket = pocketClient
 
     @staticmethod
+    def writeMsgUrls(all_urls):
+        unique_filename = "test/" + str(uuid.uuid4())
+        thefile = open(unique_filename, 'w')
+
+        for item in all_urls:
+            thefile.write("%s\n" % item)
+
+    @staticmethod
     def exclude_message_on_subject(HEADERS_TO_EXCLUDE, subject_string):
         if any(header.lower() in subject_string.lower() for header in HEADERS_TO_EXCLUDE):
             return True
         return False
 
-    def messageToPocket(self, message_dic, debug=False, headersToExclude=set(), emailIdToDomain={}):
+    def getUrlsFromGmailMessage(self, message_dic, debug=False, headersToExclude=set(), emailIdToDomain={}):
         print(message_dic['subject'])
         if GmailPocket.exclude_message_on_subject(headersToExclude, message_dic['subject']):
             return
@@ -57,8 +66,8 @@ class GmailPocket:
             all_ids.append(m_id)
 
             message_dic = self.gmail.get_message_data(m_id)
-            urls = self.messageToPocket(message_dic, debug=debug, headersToExclude=headersToExclude,
-                                        emailIdToDomain=emailIdToDomain)
+            urls = self.getUrlsFromGmailMessage(message_dic, debug=debug, headersToExclude=headersToExclude,
+                                                emailIdToDomain=emailIdToDomain)
             all_urls.update(urls)
             print("------------------------------")
             final_list.append(message_dic)  # This will create a dictonary item in the final list
@@ -69,18 +78,13 @@ class GmailPocket:
         moonpie.PrintInColor.green("Total messaged retrived: " + str(len(final_list)))
         print("Doing the batch jobs")
 
-        print(len(all_urls))
-        # unique_filename = "test/" + str(uuid.uuid4())
-        # thefile = open(unique_filename, 'w')
-
-        # for item in all_urls:
-        #     thefile.write("%s\n" % item)
+        print("Total urls retrieved: {}".format(len(all_urls)))
 
         print("Fav'ing all the urls")
-        # self.pocket.favourite(all_urls, 'g2p')
+        self.pocket.favourite(all_urls, 'g2p')
 
-        print("Trashing all the emails from gmail now")
-        # self.gmail.batch_trash_mail_given_raw_messages(mssg_list)
+        print("Trashing all the emails from gmail now, got : " + str(len(mssg_list)))
+        self.gmail.batch_trash_mail_given_raw_messages(mssg_list)
 
     def labelToPocket(self, labelIds, debug=False, headersToExclude=set(), emailIdToDomain={}):
         mssg_list = []
@@ -106,30 +110,21 @@ class GmailPocket:
             message_dic = self.gmail.get_message_data(m_id)
 
             if f.isMessageFiltered(message_dic):
-                urls = self.messageToPocket(message_dic, debug=debug, headersToExclude=headersToExclude,
-                                            emailIdToDomain=emailIdToDomain)
+                # urls = self.getUrlsFromGmailMessage(message_dic, debug=debug, headersToExclude=headersToExclude,
+                #                                     emailIdToDomain=emailIdToDomain)
                 filtered_mssg_list.append(mssg)
-                if urls is not None:
-                    all_urls.update(urls)
+                # if urls is not None:
+                #     all_urls.update(urls)
                 print("------------------------------")
                 # final_list.append(message_dic)  # This will create a dictonary item in the final list
 
                 # This will mark the messagea as read
                 # self.gmail.mark_as_read(m_id)
-        print("Doing the batch jobs")
 
-        print(len(all_urls))
-        # unique_filename = "test/" + str(uuid.uuid4())
-        # thefile = open(unique_filename, 'w')
+        self.messageListToPocket(filtered_mssg_list, headersToExclude=headersToExclude, emailIdToDomain=emailIdToDomain,
+                                 debug=debug)
+        # print("Doing the batch jobs")
 
-        # for item in all_urls:
-        #     thefile.write("%s\n" % item)
 
-        print("Fav'ing all the urls")
-        self.pocket.favourite(all_urls, 'g2p')
-
-        print("Trashing all the emails from gmail now, got : " + str(len(filtered_mssg_list)))
-
-        self.gmail.batch_trash_mail_given_raw_messages(filtered_mssg_list)
 
         # self.messageListToPocket(filtered_mssg_list, headersToExclude=headersToExclude, emailIdToDomain=emailIdToDomain)
