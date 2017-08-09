@@ -60,6 +60,8 @@ class GmailPocket:
         final_list = []
         all_urls = set()
         all_ids = []
+        moonpie.PrintInColor.green(
+            "Total messaged retrieved in before url reading in messageToPocket: " + str(len(mssg_list)))
         message_dic = {}
         for mssg in mssg_list:
             m_id = mssg['id']  # get id of individual message
@@ -68,6 +70,8 @@ class GmailPocket:
             message_dic = self.gmail.get_message_data(m_id)
             urls = self.getUrlsFromGmailMessage(message_dic, debug=debug, headersToExclude=headersToExclude,
                                                 emailIdToDomain=emailIdToDomain)
+            if not urls:
+                continue
             all_urls.update(urls)
             print("------------------------------")
             final_list.append(message_dic)  # This will create a dictonary item in the final list
@@ -75,7 +79,7 @@ class GmailPocket:
             # This will mark the messagea as read
             self.gmail.mark_as_read(m_id)
 
-        moonpie.PrintInColor.green("Total messaged retrived: " + str(len(final_list)))
+        moonpie.PrintInColor.green("Total messaged retrieved in messageToPocket: " + str(len(final_list)))
         print("Doing the batch jobs")
 
         print("Total urls retrieved: {}".format(len(all_urls)))
@@ -83,7 +87,7 @@ class GmailPocket:
         print("Fav'ing all the urls")
         self.pocket.favourite(all_urls, 'g2p')
 
-        print("Trashing all the emails from gmail now, got : " + str(len(mssg_list)))
+        moonpie.PrintInColor.red("Trashing all the emails from gmail now, got : " + str(len(mssg_list)))
         self.gmail.batch_trash_mail_given_raw_messages(mssg_list)
 
     def labelToPocket(self, labelIds, debug=False, headersToExclude=set(), emailIdToDomain={}):
@@ -91,7 +95,7 @@ class GmailPocket:
         for gmail_labels_ids in labelIds:
             curr_mssg_list = self.gmail.get_messages_for_labels(labelIds=gmail_labels_ids)
             mssg_list.extend(curr_mssg_list)
-
+        moonpie.PrintInColor.green("Total messaged retrieved from Label: " + str(len(mssg_list)))
         self.messageListToPocket(mssg_list, headersToExclude=headersToExclude, emailIdToDomain=emailIdToDomain,
                                  debug=debug)
 
@@ -101,30 +105,32 @@ class GmailPocket:
         for gmail_labels_ids in labelIds:
             curr_mssg_list = self.gmail.get_messages_for_labels(labelIds=gmail_labels_ids)
             mssg_list.extend(curr_mssg_list)
+        moonpie.PrintInColor.green("Total messaged retrieved from Manual Filtering: " + str(len(mssg_list)))
         f = Filter.fromFilterString(filterStr=filterStr)
         print(f)
         filtered_mssg_list = []
         all_urls = set()
+        i = 0
         for mssg in mssg_list:
             m_id = mssg['id']
             message_dic = self.gmail.get_message_data(m_id)
-
+            i = i + 1
+            if i % 100 == 0:
+                moonpie.PrintInColor.green("{} of {} messages are manually filtered".format(i, len(mssg_list)))
+                moonpie.PrintInColor.green(
+                    "Total messaged retrieved from Manual Filtering: " + str(len(filtered_mssg_list)))
+                self.messageListToPocket(filtered_mssg_list, headersToExclude=headersToExclude,
+                                         emailIdToDomain=emailIdToDomain,
+                                         debug=debug)
+                # reset the message list
+                filtered_mssg_list = []
             if f.isMessageFiltered(message_dic):
-                # urls = self.getUrlsFromGmailMessage(message_dic, debug=debug, headersToExclude=headersToExclude,
-                #                                     emailIdToDomain=emailIdToDomain)
                 filtered_mssg_list.append(mssg)
-                # if urls is not None:
-                #     all_urls.update(urls)
                 print("------------------------------")
-                # final_list.append(message_dic)  # This will create a dictonary item in the final list
 
-                # This will mark the messagea as read
-                # self.gmail.mark_as_read(m_id)
-
+        moonpie.PrintInColor.green("Total messaged retrieved from Manual Filtering: " + str(len(filtered_mssg_list)))
         self.messageListToPocket(filtered_mssg_list, headersToExclude=headersToExclude, emailIdToDomain=emailIdToDomain,
                                  debug=debug)
-        # print("Doing the batch jobs")
-
 
 
         # self.messageListToPocket(filtered_mssg_list, headersToExclude=headersToExclude, emailIdToDomain=emailIdToDomain)
