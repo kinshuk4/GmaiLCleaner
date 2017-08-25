@@ -14,12 +14,14 @@ sys.path.append("/Users/kchandra/Lyf/Kode/SCM/Github/k2/GmaiLCleaner/aridcaravan
 
 import aridcaravan.gmail_cleaner_util as gcu
 import uuid
+from lru import LRUCacheDict
 
 
 class GmailPocket:
     def __init__(self, gmailClient, pocketClient):
         self.gmail = gmailClient
         self.pocket = pocketClient
+        self.cache = LRUCacheDict(max_size=10000, expiration=24 * 60 * 60)
 
     @staticmethod
     def writeMsgUrls(all_urls):
@@ -66,12 +68,18 @@ class GmailPocket:
         for mssg in mssg_list:
             m_id = mssg['id']  # get id of individual message
             all_ids.append(m_id)
-
-            message_dic = self.gmail.get_message_data(m_id)
-            urls = self.getUrlsFromGmailMessage(message_dic, debug=debug, headersToExclude=headersToExclude,
-                                                emailIdToDomain=emailIdToDomain)
-            if not urls:
-                continue
+            if m_id in self.cache:
+                print("Got from gmail_pocket cache")
+                message_dic = self.cache[m_id]
+                urls = message_dic['urls']
+            else:
+                message_dic = self.gmail.get_message_data(m_id)
+                urls = self.getUrlsFromGmailMessage(message_dic, debug=debug, headersToExclude=headersToExclude,
+                                                    emailIdToDomain=emailIdToDomain)
+                if not urls:
+                    continue
+                message_dic['urls'] = urls
+                self.cache[m_id] = message_dic
             all_urls.update(urls)
             print("------------------------------")
             final_list.append(message_dic)  # This will create a dictonary item in the final list
