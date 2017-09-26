@@ -58,7 +58,7 @@ class GmailPocket:
         print(urls)
         return urls
 
-    def messageListToPocket(self, mssg_list, debug=False, headersToExclude=set(), emailIdToDomain={}):
+    def messageListToPocket(self, mssg_list, debug=False, headersToExclude=set(), emailIdToDomain={}, delete=False):
         final_list = []
         all_urls = set()
         all_ids = []
@@ -71,7 +71,11 @@ class GmailPocket:
             if m_id in self.cache:
                 print("Got from gmail_pocket cache")
                 message_dic = self.cache[m_id]
-                urls = message_dic['urls']
+                if delete:
+                    urls = message_dic['urls']
+                else:
+                    print("Got from cache but delete is false, so not processing as can process multiple time")
+                    continue
             else:
                 message_dic = self.gmail.get_message_data(m_id)
                 urls = self.getUrlsFromGmailMessage(message_dic, debug=debug, headersToExclude=headersToExclude,
@@ -94,9 +98,9 @@ class GmailPocket:
 
         print("Fav'ing all the urls")
         self.pocket.favourite(all_urls, 'g2p')
-
-        moonpie.PrintInColor.red("Trashing all the emails from gmail now, got : " + str(len(mssg_list)))
-        self.gmail.batch_trash_mail_given_raw_messages(mssg_list)
+        if delete:
+            moonpie.PrintInColor.red("Trashing all the emails from gmail now, got : " + str(len(mssg_list)))
+            self.gmail.batch_trash_mail_given_raw_messages(mssg_list)
 
     def labelToPocket(self, labelIds, debug=False, headersToExclude=set(), emailIdToDomain={}):
         mssg_list = []
@@ -107,7 +111,7 @@ class GmailPocket:
         self.messageListToPocket(mssg_list, headersToExclude=headersToExclude, emailIdToDomain=emailIdToDomain,
                                  debug=debug)
 
-    def filterToPocket(self, filterStr, debug=False, headersToExclude=set(), emailIdToDomain={}):
+    def filterToPocket(self, filterStr, debug=False, headersToExclude=set(), emailIdToDomain={}, delete=False):
         labelIds = [['INBOX'], ['SPAM']]  #
         mssg_list = []
         for gmail_labels_ids in labelIds:
@@ -129,7 +133,7 @@ class GmailPocket:
                     "Total messaged retrieved from Manual Filtering: " + str(len(filtered_mssg_list)))
                 self.messageListToPocket(filtered_mssg_list, headersToExclude=headersToExclude,
                                          emailIdToDomain=emailIdToDomain,
-                                         debug=debug)
+                                         debug=debug, delete=delete)
                 # reset the message list
                 filtered_mssg_list = []
             if f.isMessageFiltered(message_dic):
@@ -138,7 +142,7 @@ class GmailPocket:
 
         moonpie.PrintInColor.green("Total messaged retrieved from Manual Filtering: " + str(len(filtered_mssg_list)))
         self.messageListToPocket(filtered_mssg_list, headersToExclude=headersToExclude, emailIdToDomain=emailIdToDomain,
-                                 debug=debug)
+                                 debug=debug, delete=delete)
 
 
         # self.messageListToPocket(filtered_mssg_list, headersToExclude=headersToExclude, emailIdToDomain=emailIdToDomain)

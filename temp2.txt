@@ -1,0 +1,5962 @@
+{
+  "overall_score": 95.83207567238216,
+  "number_of_articles": {
+    "total": 42,
+    "missing": 0,
+    "inconsistent": 42,
+    "consistent": 0,
+    "unknown": 7
+  },
+  "reports": [
+    {
+      "sku": "S1X22O00H-A11",
+      "score": 64.86486486486487,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "availability_factor",
+            "original_value": "0",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "sort_new_in_bucket",
+            "original_value": "0",
+            "inconsistent_value": "2"
+          },
+          {
+            "key": "sales_availability_factor",
+            "original_value": "0",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "T",
+            "inconsistent_value": "T-Shirt basic"
+          },
+          {
+            "key": "sort_sale_bucket",
+            "original_value": "0",
+            "inconsistent_value": "16"
+          },
+          {
+            "key": "product_name",
+            "original_value": "T",
+            "inconsistent_value": "T-Shirt basic"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3455",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3455",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3455",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[3].partnerId",
+            "original_value": "3455",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "simples",
+            "original_value": "<Array size 5>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "sort_bucket_variant_A",
+            "original_value": "0",
+            "inconsistent_value": "16"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "availability_factor",
+            "original_value": "1",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "sort_new_in_bucket",
+            "original_value": "2",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "sales_availability_factor",
+            "original_value": "1",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "T-Shirt basic",
+            "inconsistent_value": "T"
+          },
+          {
+            "key": "sort_sale_bucket",
+            "original_value": "16",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "product_name",
+            "original_value": "T-Shirt basic",
+            "inconsistent_value": "T"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3455"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3455"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3455"
+          },
+          {
+            "key": "media$[3].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3455"
+          },
+          {
+            "key": "simples",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 5>"
+          },
+          {
+            "key": "sort_bucket_variant_A",
+            "original_value": "16",
+            "inconsistent_value": "0"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "1MY21G039-M11",
+      "score": 96.3680387409201,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "16",
+            "inconsistent_value": "29"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "29",
+            "inconsistent_value": "49"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "16",
+            "inconsistent_value": "30"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "10",
+            "inconsistent_value": "15"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "9",
+            "inconsistent_value": "14"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "29",
+            "inconsistent_value": "16"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "49",
+            "inconsistent_value": "29"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "30",
+            "inconsistent_value": "16"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "15",
+            "inconsistent_value": "10"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "14",
+            "inconsistent_value": "9"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "1MY21D07B-A11",
+      "score": 94.21052631578948,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "sort_new_in_bucket",
+            "original_value": "0",
+            "inconsistent_value": "2"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "T",
+            "inconsistent_value": "T-Shirt print"
+          },
+          {
+            "key": "sort_sale_bucket",
+            "original_value": "0",
+            "inconsistent_value": "16"
+          },
+          {
+            "key": "product_name",
+            "original_value": "T",
+            "inconsistent_value": "T-Shirt print"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3374",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3374",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "21",
+            "inconsistent_value": "23"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "41",
+            "inconsistent_value": "50"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "89",
+            "inconsistent_value": "98"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "2",
+            "inconsistent_value": "6"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "70",
+            "inconsistent_value": "75"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "sort_bucket_variant_A",
+            "original_value": "0",
+            "inconsistent_value": "16"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "sort_new_in_bucket",
+            "original_value": "2",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "T-Shirt print",
+            "inconsistent_value": "T"
+          },
+          {
+            "key": "sort_sale_bucket",
+            "original_value": "16",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "product_name",
+            "original_value": "T-Shirt print",
+            "inconsistent_value": "T"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3374"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3374"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "23",
+            "inconsistent_value": "21"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "50",
+            "inconsistent_value": "41"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "98",
+            "inconsistent_value": "89"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "6",
+            "inconsistent_value": "2"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "75",
+            "inconsistent_value": "70"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "sort_bucket_variant_A",
+            "original_value": "16",
+            "inconsistent_value": "0"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "1MY21D07I-A11",
+      "score": 94.13265306122449,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "sort_new_in_bucket",
+            "original_value": "0",
+            "inconsistent_value": "2"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "T",
+            "inconsistent_value": "T-Shirt print"
+          },
+          {
+            "key": "sort_sale_bucket",
+            "original_value": "0",
+            "inconsistent_value": "16"
+          },
+          {
+            "key": "product_name",
+            "original_value": "T",
+            "inconsistent_value": "T-Shirt print"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3444",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3444",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3444",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "24",
+            "inconsistent_value": "45"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "36",
+            "inconsistent_value": "57"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "93",
+            "inconsistent_value": "148"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "3",
+            "inconsistent_value": "20"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "56",
+            "inconsistent_value": "98"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "sort_bucket_variant_A",
+            "original_value": "0",
+            "inconsistent_value": "16"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "sort_new_in_bucket",
+            "original_value": "2",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "T-Shirt print",
+            "inconsistent_value": "T"
+          },
+          {
+            "key": "sort_sale_bucket",
+            "original_value": "16",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "product_name",
+            "original_value": "T-Shirt print",
+            "inconsistent_value": "T"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3444"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3444"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3444"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "45",
+            "inconsistent_value": "24"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "57",
+            "inconsistent_value": "36"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "148",
+            "inconsistent_value": "93"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "20",
+            "inconsistent_value": "3"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "98",
+            "inconsistent_value": "56"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "sort_bucket_variant_A",
+            "original_value": "16",
+            "inconsistent_value": "0"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "1MY21D07M-J11",
+      "score": 94.13265306122449,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "sort_new_in_bucket",
+            "original_value": "0",
+            "inconsistent_value": "2"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "T",
+            "inconsistent_value": "T-Shirt print"
+          },
+          {
+            "key": "sort_sale_bucket",
+            "original_value": "0",
+            "inconsistent_value": "16"
+          },
+          {
+            "key": "product_name",
+            "original_value": "T",
+            "inconsistent_value": "T-Shirt print"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3374",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3374",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3374",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "16",
+            "inconsistent_value": "50"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "32",
+            "inconsistent_value": "83"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "71",
+            "inconsistent_value": "143"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "8",
+            "inconsistent_value": "28"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "39",
+            "inconsistent_value": "100"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "sort_bucket_variant_A",
+            "original_value": "0",
+            "inconsistent_value": "16"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "sort_new_in_bucket",
+            "original_value": "2",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "T-Shirt print",
+            "inconsistent_value": "T"
+          },
+          {
+            "key": "sort_sale_bucket",
+            "original_value": "16",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "product_name",
+            "original_value": "T-Shirt print",
+            "inconsistent_value": "T"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3374"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3374"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3374"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "50",
+            "inconsistent_value": "16"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "83",
+            "inconsistent_value": "32"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "143",
+            "inconsistent_value": "71"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "28",
+            "inconsistent_value": "8"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "100",
+            "inconsistent_value": "39"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "sort_bucket_variant_A",
+            "original_value": "16",
+            "inconsistent_value": "0"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "VE121C164-J11",
+      "score": 99.77064220183486,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "1MY21W005-N11",
+      "score": 97.97979797979798,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3455",
+            "inconsistent_value": "3020"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3455",
+            "inconsistent_value": "3020"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3455",
+            "inconsistent_value": "3020"
+          },
+          {
+            "key": "media$[3].partnerId",
+            "original_value": "3455",
+            "inconsistent_value": "3020"
+          },
+          {
+            "key": "media$[4].partnerId",
+            "original_value": "3455",
+            "inconsistent_value": "3020"
+          },
+          {
+            "key": "simples[0]$.activePartnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3020"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "lounge_name_suffix_t_de",
+            "original_value": "oliv",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3020",
+            "inconsistent_value": "3455"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3020",
+            "inconsistent_value": "3455"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3020",
+            "inconsistent_value": "3455"
+          },
+          {
+            "key": "media$[3].partnerId",
+            "original_value": "3020",
+            "inconsistent_value": "3455"
+          },
+          {
+            "key": "media$[4].partnerId",
+            "original_value": "3020",
+            "inconsistent_value": "3455"
+          },
+          {
+            "key": "simples[0]$.activePartnerId",
+            "original_value": "3020",
+            "inconsistent_value": "3850"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "1MY21D07H-Q11",
+      "score": 98.7012987012987,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "sort_new_in_bucket",
+            "original_value": "0",
+            "inconsistent_value": "2"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "T",
+            "inconsistent_value": "T-Shirt print"
+          },
+          {
+            "key": "sort_sale_bucket",
+            "original_value": "0",
+            "inconsistent_value": "16"
+          },
+          {
+            "key": "product_name",
+            "original_value": "T",
+            "inconsistent_value": "T-Shirt print"
+          },
+          {
+            "key": "sort_bucket_variant_A",
+            "original_value": "0",
+            "inconsistent_value": "16"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "sort_new_in_bucket",
+            "original_value": "2",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "T-Shirt print",
+            "inconsistent_value": "T"
+          },
+          {
+            "key": "sort_sale_bucket",
+            "original_value": "16",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "product_name",
+            "original_value": "T-Shirt print",
+            "inconsistent_value": "T"
+          },
+          {
+            "key": "sort_bucket_variant_A",
+            "original_value": "16",
+            "inconsistent_value": "0"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "ELB21E010-T11",
+      "score": 98.62068965517241,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "sort_new_in_bucket",
+            "original_value": "0",
+            "inconsistent_value": "4"
+          },
+          {
+            "key": "sort_sale_bucket",
+            "original_value": "0",
+            "inconsistent_value": "128"
+          },
+          {
+            "key": "is_plus_size_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "2",
+            "inconsistent_value": "3"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "4",
+            "inconsistent_value": "5"
+          },
+          {
+            "key": "sort_bucket_variant_A",
+            "original_value": "0",
+            "inconsistent_value": "128"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "sort_new_in_bucket",
+            "original_value": "4",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "sort_sale_bucket",
+            "original_value": "128",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "is_plus_size_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "3",
+            "inconsistent_value": "2"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "5",
+            "inconsistent_value": "4"
+          },
+          {
+            "key": "sort_bucket_variant_A",
+            "original_value": "128",
+            "inconsistent_value": "0"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "WD221J008-M11",
+      "score": 96.59863945578232,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "name_de",
+            "original_value": "Sweatjacke - bottle-green",
+            "inconsistent_value": "Kapuzenpullover - bottle-green"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "brandmisspelled_de",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "product_title_de",
+            "original_value": "Schmuddelwedda Sweatjacke - bottle-green",
+            "inconsistent_value": "Schmuddelwedda Kapuzenpullover - bottle-green"
+          },
+          {
+            "key": "short_description_de",
+            "original_value": "Schmuddelwedda Sweatjacke - bottle-green",
+            "inconsistent_value": "Schmuddelwedda Kapuzenpullover - bottle-green"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "25",
+            "inconsistent_value": "39"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "34",
+            "inconsistent_value": "51"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "28",
+            "inconsistent_value": "44"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "13",
+            "inconsistent_value": "18"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "16",
+            "inconsistent_value": "21"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "name_de",
+            "original_value": "Kapuzenpullover - bottle-green",
+            "inconsistent_value": "Sweatjacke - bottle-green"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "product_title_de",
+            "original_value": "Schmuddelwedda Kapuzenpullover - bottle-green",
+            "inconsistent_value": "Schmuddelwedda Sweatjacke - bottle-green"
+          },
+          {
+            "key": "short_description_de",
+            "original_value": "Schmuddelwedda Kapuzenpullover - bottle-green",
+            "inconsistent_value": "Schmuddelwedda Sweatjacke - bottle-green"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "39",
+            "inconsistent_value": "25"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "51",
+            "inconsistent_value": "34"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "44",
+            "inconsistent_value": "28"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "18",
+            "inconsistent_value": "13"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "21",
+            "inconsistent_value": "16"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "BU111B01A-K11",
+      "score": 95.71734475374733,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "High Heel Pumps",
+            "inconsistent_value": "Pumps"
+          },
+          {
+            "key": "upper_material_t_de",
+            "original_value": "Hochwertiges Lederimitat",
+            "inconsistent_value": "hochwertiges Lederimitat"
+          },
+          {
+            "key": "product_name",
+            "original_value": "High Heel Pumps",
+            "inconsistent_value": "Pumps"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3118",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3118",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3118",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[3].partnerId",
+            "original_value": "3118",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[4].partnerId",
+            "original_value": "3118",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[5].partnerId",
+            "original_value": "3118",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[6].partnerId",
+            "original_value": "3118",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "1",
+            "inconsistent_value": "6"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "3",
+            "inconsistent_value": "15"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "1",
+            "inconsistent_value": "16"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "6",
+            "inconsistent_value": "31"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "2",
+            "inconsistent_value": "23"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[5]$.quantity",
+            "original_value": "2",
+            "inconsistent_value": "14"
+          },
+          {
+            "key": "simples[6]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "Pumps",
+            "inconsistent_value": "High Heel Pumps"
+          },
+          {
+            "key": "upper_material_t_de",
+            "original_value": "hochwertiges Lederimitat",
+            "inconsistent_value": "Hochwertiges Lederimitat"
+          },
+          {
+            "key": "product_name",
+            "original_value": "Pumps",
+            "inconsistent_value": "High Heel Pumps"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3118"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3118"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3118"
+          },
+          {
+            "key": "media$[3].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3118"
+          },
+          {
+            "key": "media$[4].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3118"
+          },
+          {
+            "key": "media$[5].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3118"
+          },
+          {
+            "key": "media$[6].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3118"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "6",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "15",
+            "inconsistent_value": "3"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "16",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "31",
+            "inconsistent_value": "6"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "23",
+            "inconsistent_value": "2"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[5]$.quantity",
+            "original_value": "14",
+            "inconsistent_value": "2"
+          },
+          {
+            "key": "simples[6]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "WD221G00C-K11",
+      "score": 96.65071770334929,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "brandmisspelled_de",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "1",
+            "inconsistent_value": "12"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "29",
+            "inconsistent_value": "57"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "29",
+            "inconsistent_value": "46"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "4",
+            "inconsistent_value": "9"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "16",
+            "inconsistent_value": "31"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "12",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "57",
+            "inconsistent_value": "29"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "46",
+            "inconsistent_value": "29"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "9",
+            "inconsistent_value": "4"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "31",
+            "inconsistent_value": "16"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "M2811N046-O11",
+      "score": 95.2076677316294,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "name_de",
+            "original_value": "Cowboy-/ Bikerstiefelette - brown",
+            "inconsistent_value": "Cowboy-/Bikerstiefelette - brown"
+          },
+          {
+            "key": "filter_new[0]",
+            "original_value": "NEW",
+            "inconsistent_value": "NOT_NEW"
+          },
+          {
+            "key": "tag_translated[0]",
+            "original_value": "Cowboy-/ Bikerstiefelette",
+            "inconsistent_value": "Cowboy-/Bikerstiefelette"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "Cowboy",
+            "inconsistent_value": "Cowboy-/Bikerstiefelette"
+          },
+          {
+            "key": "name_tag_de",
+            "original_value": "Cowboy-/ Bikerstiefelette",
+            "inconsistent_value": "Cowboy-/Bikerstiefelette"
+          },
+          {
+            "key": "is_new",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "product_name",
+            "original_value": "Cowboy",
+            "inconsistent_value": "Cowboy-/Bikerstiefelette"
+          },
+          {
+            "key": "product_title_de",
+            "original_value": "MaripÃ© Cowboy-/ Bikerstiefelette - brown",
+            "inconsistent_value": "MaripÃ© Cowboy-/Bikerstiefelette - brown"
+          },
+          {
+            "key": "short_description_de",
+            "original_value": "MaripÃ© Cowboy-/ Bikerstiefelette - brown",
+            "inconsistent_value": "MaripÃ© Cowboy-/Bikerstiefelette - brown"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3118",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3118",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3118",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[3].partnerId",
+            "original_value": "3118",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[4].partnerId",
+            "original_value": "3118",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[5].partnerId",
+            "original_value": "3118",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[6].partnerId",
+            "original_value": "3118",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "1",
+            "inconsistent_value": "2"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "6",
+            "inconsistent_value": "7"
+          },
+          {
+            "key": "simples[4]$.activePartnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3008"
+          },
+          {
+            "key": "simples[5]$.quantity",
+            "original_value": "6",
+            "inconsistent_value": "7"
+          },
+          {
+            "key": "simples[6]$.quantity",
+            "original_value": "2",
+            "inconsistent_value": "3"
+          },
+          {
+            "key": "simples[8]$.quantity",
+            "original_value": "3",
+            "inconsistent_value": "4"
+          },
+          {
+            "key": "simples[8]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[9]$.quantity",
+            "original_value": "6",
+            "inconsistent_value": "7"
+          },
+          {
+            "key": "simples[9]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[10]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "name_de",
+            "original_value": "Cowboy-/Bikerstiefelette - brown",
+            "inconsistent_value": "Cowboy-/ Bikerstiefelette - brown"
+          },
+          {
+            "key": "filter_new[0]",
+            "original_value": "NOT_NEW",
+            "inconsistent_value": "NEW"
+          },
+          {
+            "key": "tag_translated[0]",
+            "original_value": "Cowboy-/Bikerstiefelette",
+            "inconsistent_value": "Cowboy-/ Bikerstiefelette"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "Cowboy-/Bikerstiefelette",
+            "inconsistent_value": "Cowboy"
+          },
+          {
+            "key": "name_tag_de",
+            "original_value": "Cowboy-/Bikerstiefelette",
+            "inconsistent_value": "Cowboy-/ Bikerstiefelette"
+          },
+          {
+            "key": "is_new",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "product_name",
+            "original_value": "Cowboy-/Bikerstiefelette",
+            "inconsistent_value": "Cowboy"
+          },
+          {
+            "key": "product_title_de",
+            "original_value": "MaripÃ© Cowboy-/Bikerstiefelette - brown",
+            "inconsistent_value": "MaripÃ© Cowboy-/ Bikerstiefelette - brown"
+          },
+          {
+            "key": "short_description_de",
+            "original_value": "MaripÃ© Cowboy-/Bikerstiefelette - brown",
+            "inconsistent_value": "MaripÃ© Cowboy-/ Bikerstiefelette - brown"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3118"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3118"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3118"
+          },
+          {
+            "key": "media$[3].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3118"
+          },
+          {
+            "key": "media$[4].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3118"
+          },
+          {
+            "key": "media$[5].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3118"
+          },
+          {
+            "key": "media$[6].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3118"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "2",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "7",
+            "inconsistent_value": "6"
+          },
+          {
+            "key": "simples[4]$.activePartnerId",
+            "original_value": "3008",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "simples[5]$.quantity",
+            "original_value": "7",
+            "inconsistent_value": "6"
+          },
+          {
+            "key": "simples[6]$.quantity",
+            "original_value": "3",
+            "inconsistent_value": "2"
+          },
+          {
+            "key": "simples[8]$.quantity",
+            "original_value": "4",
+            "inconsistent_value": "3"
+          },
+          {
+            "key": "simples[8]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[9]$.quantity",
+            "original_value": "7",
+            "inconsistent_value": "6"
+          },
+          {
+            "key": "simples[9]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[10]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "activation_date_m_de",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "JA222O1H5-A11",
+      "score": 98.19587628865979,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "T",
+            "inconsistent_value": "T-Shirt basic"
+          },
+          {
+            "key": "product_name",
+            "original_value": "T",
+            "inconsistent_value": "T-Shirt basic"
+          },
+          {
+            "key": "upper_material_clothing_t_de_key_s",
+            "original_value": "050CMD050CO",
+            "inconsistent_value": "050CO050CMD"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "14",
+            "inconsistent_value": "15"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "T-Shirt basic",
+            "inconsistent_value": "T"
+          },
+          {
+            "key": "product_name",
+            "original_value": "T-Shirt basic",
+            "inconsistent_value": "T"
+          },
+          {
+            "key": "upper_material_clothing_t_de_key_s",
+            "original_value": "050CO050CMD",
+            "inconsistent_value": "050CMD050CO"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "15",
+            "inconsistent_value": "14"
+          },
+          {
+            "key": "activation_date_m_de",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "EV611B08A-Q11",
+      "score": 94.84536082474227,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "sales_index",
+            "original_value": "4255",
+            "inconsistent_value": "4252"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "de.zalando.shop.backend.catalog.updater.myfilters.model.MyFiltersTags_m",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "de.zalando.shop.backend.catalog.updater.myfilters.model.MyFiltersTags_m_key_m",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3297",
+            "inconsistent_value": "3073"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3297",
+            "inconsistent_value": "3073"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3297",
+            "inconsistent_value": "3073"
+          },
+          {
+            "key": "media$[3].partnerId",
+            "original_value": "3297",
+            "inconsistent_value": "3073"
+          },
+          {
+            "key": "media$[4].partnerId",
+            "original_value": "3297",
+            "inconsistent_value": "3073"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "8",
+            "inconsistent_value": "7"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "9",
+            "inconsistent_value": "7"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "16",
+            "inconsistent_value": "14"
+          },
+          {
+            "key": "simples[6]$.quantity",
+            "original_value": "9",
+            "inconsistent_value": "8"
+          },
+          {
+            "key": "de.zalando.shop.backend.catalog.updater.myfilters.model.MyFiltersTags_m_de",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "filter_my_filters",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "sales_index",
+            "original_value": "4252",
+            "inconsistent_value": "4255"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3073",
+            "inconsistent_value": "3297"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3073",
+            "inconsistent_value": "3297"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3073",
+            "inconsistent_value": "3297"
+          },
+          {
+            "key": "media$[3].partnerId",
+            "original_value": "3073",
+            "inconsistent_value": "3297"
+          },
+          {
+            "key": "media$[4].partnerId",
+            "original_value": "3073",
+            "inconsistent_value": "3297"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "7",
+            "inconsistent_value": "8"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "7",
+            "inconsistent_value": "9"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "14",
+            "inconsistent_value": "16"
+          },
+          {
+            "key": "simples[6]$.quantity",
+            "original_value": "8",
+            "inconsistent_value": "9"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "EV611B042-Q11",
+      "score": 93.6127744510978,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "de.zalando.shop.backend.catalog.updater.myfilters.model.MyFiltersTags_m",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "de.zalando.shop.backend.catalog.updater.myfilters.model.MyFiltersTags_m_key_m",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "7",
+            "inconsistent_value": "6"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "6",
+            "inconsistent_value": "7"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[1]$.activePartnerId",
+            "original_value": "3073",
+            "inconsistent_value": "3665"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "11",
+            "inconsistent_value": "10"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[5]$.quantity",
+            "original_value": "16",
+            "inconsistent_value": "12"
+          },
+          {
+            "key": "de.zalando.shop.backend.catalog.updater.myfilters.model.MyFiltersTags_m_de",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "filter_my_filters",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "article_status_types_mi",
+            "original_value": "<Array size 9>",
+            "inconsistent_value": "<Array size 4>"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "6",
+            "inconsistent_value": "7"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "7",
+            "inconsistent_value": "6"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[1]$.activePartnerId",
+            "original_value": "3665",
+            "inconsistent_value": "3073"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "10",
+            "inconsistent_value": "11"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[5]$.quantity",
+            "original_value": "12",
+            "inconsistent_value": "16"
+          },
+          {
+            "key": "article_status_types_mi",
+            "original_value": "<Array size 4>",
+            "inconsistent_value": "<Array size 9>"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "4DR21U00T-G11",
+      "score": 95.8041958041958,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "sleeve_length_t_de",
+            "original_value": "66 cm bei GrÃ¶Ãe S",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "brandmisspelled_de",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "38",
+            "inconsistent_value": "87"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "54",
+            "inconsistent_value": "116"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "34",
+            "inconsistent_value": "75"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "17",
+            "inconsistent_value": "36"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "14",
+            "inconsistent_value": "29"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "productmodel_length_t_de",
+            "original_value": "87 cm bei GrÃ¶Ãe S",
+            "inconsistent_value": "<null>"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "87",
+            "inconsistent_value": "38"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "116",
+            "inconsistent_value": "54"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "75",
+            "inconsistent_value": "34"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "36",
+            "inconsistent_value": "17"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "29",
+            "inconsistent_value": "14"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "P6822P007-K12",
+      "score": 99.18032786885246,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "brandmisspelled_de",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "JY121D01X-K11",
+      "score": 98.11320754716981,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "upper_material_clothing_t_de",
+            "original_value": "50% Viskose, 50% Polyester",
+            "inconsistent_value": "50% Polyester, 50% Viskose"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "T",
+            "inconsistent_value": "T-Shirt print"
+          },
+          {
+            "key": "product_name",
+            "original_value": "T",
+            "inconsistent_value": "T-Shirt print"
+          },
+          {
+            "key": "upper_material_clothing_t_de_key_s",
+            "original_value": "050CV050PES",
+            "inconsistent_value": "050PES050CV"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "upper_material_clothing_t_de",
+            "original_value": "50% Polyester, 50% Viskose",
+            "inconsistent_value": "50% Viskose, 50% Polyester"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "T-Shirt print",
+            "inconsistent_value": "T"
+          },
+          {
+            "key": "product_name",
+            "original_value": "T-Shirt print",
+            "inconsistent_value": "T"
+          },
+          {
+            "key": "upper_material_clothing_t_de_key_s",
+            "original_value": "050PES050CV",
+            "inconsistent_value": "050CV050PES"
+          },
+          {
+            "key": "activation_date_m_de",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "JY121J011-G11",
+      "score": 98.5632183908046,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "2",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "2",
+            "inconsistent_value": "1"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "1",
+            "inconsistent_value": "2"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "1",
+            "inconsistent_value": "2"
+          },
+          {
+            "key": "activation_date_m_de",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "H0K22T00L-Q11",
+      "score": 96.91943127962085,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "filter_length[0]",
+            "original_value": "Oberschenkel-lang",
+            "inconsistent_value": "oberschenkellang"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "28",
+            "inconsistent_value": "83"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "35",
+            "inconsistent_value": "105"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "18",
+            "inconsistent_value": "58"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "11",
+            "inconsistent_value": "34"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "5",
+            "inconsistent_value": "14"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "filter_length[0]",
+            "original_value": "oberschenkellang",
+            "inconsistent_value": "Oberschenkel-lang"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "83",
+            "inconsistent_value": "28"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "105",
+            "inconsistent_value": "35"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "58",
+            "inconsistent_value": "18"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "34",
+            "inconsistent_value": "11"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "14",
+            "inconsistent_value": "5"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "EV611B09A-Q11",
+      "score": 95.32520325203252,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "sales_index",
+            "original_value": "4297",
+            "inconsistent_value": "4277"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3299",
+            "inconsistent_value": "3665"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3299",
+            "inconsistent_value": "3665"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3299",
+            "inconsistent_value": "3665"
+          },
+          {
+            "key": "media$[3].partnerId",
+            "original_value": "3299",
+            "inconsistent_value": "3665"
+          },
+          {
+            "key": "media$[4].partnerId",
+            "original_value": "3299",
+            "inconsistent_value": "3665"
+          },
+          {
+            "key": "media$[5].partnerId",
+            "original_value": "3299",
+            "inconsistent_value": "3665"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "6",
+            "inconsistent_value": "5"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[5]$.quantity",
+            "original_value": "14",
+            "inconsistent_value": "13"
+          },
+          {
+            "key": "simples[5]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[5]$.activePartnerId",
+            "original_value": "3665",
+            "inconsistent_value": "3073"
+          },
+          {
+            "key": "simples[6]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[7]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[8]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "sales_index_day",
+            "original_value": "2",
+            "inconsistent_value": "0"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "sales_index",
+            "original_value": "4277",
+            "inconsistent_value": "4297"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3665",
+            "inconsistent_value": "3299"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3665",
+            "inconsistent_value": "3299"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3665",
+            "inconsistent_value": "3299"
+          },
+          {
+            "key": "media$[3].partnerId",
+            "original_value": "3665",
+            "inconsistent_value": "3299"
+          },
+          {
+            "key": "media$[4].partnerId",
+            "original_value": "3665",
+            "inconsistent_value": "3299"
+          },
+          {
+            "key": "media$[5].partnerId",
+            "original_value": "3665",
+            "inconsistent_value": "3299"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "5",
+            "inconsistent_value": "6"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[5]$.quantity",
+            "original_value": "13",
+            "inconsistent_value": "14"
+          },
+          {
+            "key": "simples[5]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[5]$.activePartnerId",
+            "original_value": "3073",
+            "inconsistent_value": "3665"
+          },
+          {
+            "key": "simples[6]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[7]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[8]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "sales_index_day",
+            "original_value": "0",
+            "inconsistent_value": "2"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "EV611B0EJ-Q11",
+      "score": 93.71196754563894,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "sales_index",
+            "original_value": "4483",
+            "inconsistent_value": "4482"
+          },
+          {
+            "key": "size",
+            "original_value": "<Array size 9>",
+            "inconsistent_value": "<Array size 8>"
+          },
+          {
+            "key": "size_family",
+            "original_value": "<Array size 9>",
+            "inconsistent_value": "<Array size 8>"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "sales_availability_factor",
+            "original_value": "1",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "4",
+            "inconsistent_value": "3"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "1",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "simples[5]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[6]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "sales_index",
+            "original_value": "4482",
+            "inconsistent_value": "4483"
+          },
+          {
+            "key": "size",
+            "original_value": "<Array size 8>",
+            "inconsistent_value": "<Array size 9>"
+          },
+          {
+            "key": "size_family",
+            "original_value": "<Array size 8>",
+            "inconsistent_value": "<Array size 9>"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "sales_availability_factor",
+            "original_value": "0",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "3",
+            "inconsistent_value": "4"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "0",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "simples[5]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[6]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "JY121E02R-Q11",
+      "score": 98.5576923076923,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "product_title_de",
+            "original_value": "JDYJOANY - Bluse - black",
+            "inconsistent_value": "JDY JDYJOANY - Bluse - black"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "30",
+            "inconsistent_value": "26"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "136",
+            "inconsistent_value": "138"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "122",
+            "inconsistent_value": "113"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "82",
+            "inconsistent_value": "75"
+          },
+          {
+            "key": "simples[5]$.quantity",
+            "original_value": "5",
+            "inconsistent_value": "4"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "product_title_de",
+            "original_value": "JDY JDYJOANY - Bluse - black",
+            "inconsistent_value": "JDYJOANY - Bluse - black"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "26",
+            "inconsistent_value": "30"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "138",
+            "inconsistent_value": "136"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "113",
+            "inconsistent_value": "122"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "75",
+            "inconsistent_value": "82"
+          },
+          {
+            "key": "simples[5]$.quantity",
+            "original_value": "4",
+            "inconsistent_value": "5"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "P6822S025-A11",
+      "score": 98.0561555075594,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "Kapuzenpullover",
+            "inconsistent_value": "Sweatshirt"
+          },
+          {
+            "key": "brandmisspelled_de",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "product_name",
+            "original_value": "Kapuzenpullover",
+            "inconsistent_value": "Sweatshirt"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "6",
+            "inconsistent_value": "2"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "9",
+            "inconsistent_value": "4"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "4",
+            "inconsistent_value": "3"
+          },
+          {
+            "key": "simples[6]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "Sweatshirt",
+            "inconsistent_value": "Kapuzenpullover"
+          },
+          {
+            "key": "product_name",
+            "original_value": "Sweatshirt",
+            "inconsistent_value": "Kapuzenpullover"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "2",
+            "inconsistent_value": "6"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "4",
+            "inconsistent_value": "9"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "3",
+            "inconsistent_value": "4"
+          },
+          {
+            "key": "simples[6]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "4DR21G04Z-N11",
+      "score": 97.63593380614657,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "filter_length[0]",
+            "original_value": "Oberschenkel-lang",
+            "inconsistent_value": "oberschenkellang"
+          },
+          {
+            "key": "brandmisspelled_de",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3374",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3374",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3374",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[3].partnerId",
+            "original_value": "3374",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[4].partnerId",
+            "original_value": "3374",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[5].partnerId",
+            "original_value": "3374",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "5",
+            "inconsistent_value": "4"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "filter_length[0]",
+            "original_value": "oberschenkellang",
+            "inconsistent_value": "Oberschenkel-lang"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3374"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3374"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3374"
+          },
+          {
+            "key": "media$[3].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3374"
+          },
+          {
+            "key": "media$[4].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3374"
+          },
+          {
+            "key": "media$[5].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3374"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "4",
+            "inconsistent_value": "5"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "1MY21D07K-Q11",
+      "score": 92.81914893617021,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "size_family[0]",
+            "original_value": "32",
+            "inconsistent_value": "34"
+          },
+          {
+            "key": "size_family[1]",
+            "original_value": "34",
+            "inconsistent_value": "36"
+          },
+          {
+            "key": "size_family[2]",
+            "original_value": "36",
+            "inconsistent_value": "38"
+          },
+          {
+            "key": "size_family[3]",
+            "original_value": "38",
+            "inconsistent_value": "40"
+          },
+          {
+            "key": "size_family[4]",
+            "original_value": "40",
+            "inconsistent_value": "42"
+          },
+          {
+            "key": "size_family[5]",
+            "original_value": "42",
+            "inconsistent_value": "44"
+          },
+          {
+            "key": "sort_new_in_bucket",
+            "original_value": "0",
+            "inconsistent_value": "4"
+          },
+          {
+            "key": "sort_sale_bucket",
+            "original_value": "0",
+            "inconsistent_value": "128"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3374",
+            "inconsistent_value": "3020"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3374",
+            "inconsistent_value": "3020"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "26",
+            "inconsistent_value": "23"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[0]$.sizeFamily[0]",
+            "original_value": "40",
+            "inconsistent_value": "42"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[1]$.sizeFamily[0]",
+            "original_value": "38",
+            "inconsistent_value": "40"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[2]$.sizeFamily[0]",
+            "original_value": "36",
+            "inconsistent_value": "38"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "10",
+            "inconsistent_value": "9"
+          },
+          {
+            "key": "simples[3]$.sizeFamily[0]",
+            "original_value": "42",
+            "inconsistent_value": "44"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[4]$.sizeFamily[0]",
+            "original_value": "32",
+            "inconsistent_value": "34"
+          },
+          {
+            "key": "simples[4]$.sizeFamily[1]",
+            "original_value": "34",
+            "inconsistent_value": "36"
+          },
+          {
+            "key": "sort_bucket_variant_A",
+            "original_value": "0",
+            "inconsistent_value": "128"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "size_family[0]",
+            "original_value": "34",
+            "inconsistent_value": "32"
+          },
+          {
+            "key": "size_family[1]",
+            "original_value": "36",
+            "inconsistent_value": "34"
+          },
+          {
+            "key": "size_family[2]",
+            "original_value": "38",
+            "inconsistent_value": "36"
+          },
+          {
+            "key": "size_family[3]",
+            "original_value": "40",
+            "inconsistent_value": "38"
+          },
+          {
+            "key": "size_family[4]",
+            "original_value": "42",
+            "inconsistent_value": "40"
+          },
+          {
+            "key": "size_family[5]",
+            "original_value": "44",
+            "inconsistent_value": "42"
+          },
+          {
+            "key": "sort_new_in_bucket",
+            "original_value": "4",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "sort_sale_bucket",
+            "original_value": "128",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3020",
+            "inconsistent_value": "3374"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3020",
+            "inconsistent_value": "3374"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "23",
+            "inconsistent_value": "26"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[0]$.sizeFamily[0]",
+            "original_value": "42",
+            "inconsistent_value": "40"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[1]$.sizeFamily[0]",
+            "original_value": "40",
+            "inconsistent_value": "38"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[2]$.sizeFamily[0]",
+            "original_value": "38",
+            "inconsistent_value": "36"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "9",
+            "inconsistent_value": "10"
+          },
+          {
+            "key": "simples[3]$.sizeFamily[0]",
+            "original_value": "44",
+            "inconsistent_value": "42"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[4]$.sizeFamily[0]",
+            "original_value": "34",
+            "inconsistent_value": "32"
+          },
+          {
+            "key": "simples[4]$.sizeFamily[1]",
+            "original_value": "36",
+            "inconsistent_value": "34"
+          },
+          {
+            "key": "sort_bucket_variant_A",
+            "original_value": "128",
+            "inconsistent_value": "0"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "NA823B0AV-J11",
+      "score": 98.34437086092716,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "sort_new_in_bucket",
+            "original_value": "0",
+            "inconsistent_value": "2"
+          },
+          {
+            "key": "sort_bucket_variant_A",
+            "original_value": "0",
+            "inconsistent_value": "16"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "sort_new_in_bucket",
+            "original_value": "2",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "sort_bucket_variant_A",
+            "original_value": "16",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "activation_date_m_de",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "4DR22O00S-C11",
+      "score": 96.3157894736842,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "product_name_de",
+            "original_value": "T",
+            "inconsistent_value": "T-Shirt print"
+          },
+          {
+            "key": "brandmisspelled_de",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "product_name",
+            "original_value": "T",
+            "inconsistent_value": "T-Shirt print"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "product_name_de",
+            "original_value": "T-Shirt print",
+            "inconsistent_value": "T"
+          },
+          {
+            "key": "product_name",
+            "original_value": "T-Shirt print",
+            "inconsistent_value": "T"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "4DR21D042-A11",
+      "score": 90.41450777202073,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "availability_factor",
+            "original_value": "1",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "size",
+            "original_value": "<Array size 4>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "size_family",
+            "original_value": "<Array size 9>",
+            "inconsistent_value": "<Array size 3>"
+          },
+          {
+            "key": "sort_new_in_bucket",
+            "original_value": "2",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "T",
+            "inconsistent_value": "T-Shirt print"
+          },
+          {
+            "key": "sort_sale_bucket",
+            "original_value": "16",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "brandmisspelled_de",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "product_name",
+            "original_value": "T",
+            "inconsistent_value": "T-Shirt print"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3374",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3374",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3374",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "1",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "simples[0]$.activePartnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3020"
+          },
+          {
+            "key": "simples[0]$.sizeFamily[0]",
+            "original_value": "40",
+            "inconsistent_value": "42"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "3",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "simples[1]$.sizeFamily[0]",
+            "original_value": "38",
+            "inconsistent_value": "44"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "1",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "simples[2]$.sizeFamily[0]",
+            "original_value": "36",
+            "inconsistent_value": "38"
+          },
+          {
+            "key": "simples[3]$.sizeFamily[0]",
+            "original_value": "42",
+            "inconsistent_value": "44"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "31",
+            "inconsistent_value": "28"
+          },
+          {
+            "key": "simples[4]$.sizeFamily[0]",
+            "original_value": "32",
+            "inconsistent_value": "38"
+          },
+          {
+            "key": "simples[4]$.sizeFamily[1]",
+            "original_value": "34",
+            "inconsistent_value": "40"
+          },
+          {
+            "key": "sort_bucket_variant_A",
+            "original_value": "16",
+            "inconsistent_value": "1"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "availability_factor",
+            "original_value": "0",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "size",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 4>"
+          },
+          {
+            "key": "size_family",
+            "original_value": "<Array size 3>",
+            "inconsistent_value": "<Array size 9>"
+          },
+          {
+            "key": "sort_new_in_bucket",
+            "original_value": "1",
+            "inconsistent_value": "2"
+          },
+          {
+            "key": "product_name_de",
+            "original_value": "T-Shirt print",
+            "inconsistent_value": "T"
+          },
+          {
+            "key": "sort_sale_bucket",
+            "original_value": "1",
+            "inconsistent_value": "16"
+          },
+          {
+            "key": "product_name",
+            "original_value": "T-Shirt print",
+            "inconsistent_value": "T"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3374"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3374"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3374"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "0",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "simples[0]$.activePartnerId",
+            "original_value": "3020",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "simples[0]$.sizeFamily[0]",
+            "original_value": "42",
+            "inconsistent_value": "40"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "0",
+            "inconsistent_value": "3"
+          },
+          {
+            "key": "simples[1]$.sizeFamily[0]",
+            "original_value": "44",
+            "inconsistent_value": "38"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "0",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "simples[2]$.sizeFamily[0]",
+            "original_value": "38",
+            "inconsistent_value": "36"
+          },
+          {
+            "key": "simples[3]$.sizeFamily[0]",
+            "original_value": "44",
+            "inconsistent_value": "42"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "28",
+            "inconsistent_value": "31"
+          },
+          {
+            "key": "simples[4]$.sizeFamily[0]",
+            "original_value": "38",
+            "inconsistent_value": "32"
+          },
+          {
+            "key": "simples[4]$.sizeFamily[1]",
+            "original_value": "40",
+            "inconsistent_value": "34"
+          },
+          {
+            "key": "sort_bucket_variant_A",
+            "original_value": "1",
+            "inconsistent_value": "16"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "WD221U00H-L11",
+      "score": 97.6905311778291,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "filter_length[0]",
+            "original_value": "Oberschenkel-lang",
+            "inconsistent_value": "oberschenkellang"
+          },
+          {
+            "key": "name_de",
+            "original_value": "Regenjacke / wasserabweisende Jacke - turquoise",
+            "inconsistent_value": "Parka - turquoise"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "brandmisspelled_de",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "product_title_de",
+            "original_value": "Schmuddelwedda Regenjacke / wasserabweisende Jacke - turquoise",
+            "inconsistent_value": "Schmuddelwedda Parka - turquoise"
+          },
+          {
+            "key": "short_description_de",
+            "original_value": "Schmuddelwedda Regenjacke / wasserabweisende Jacke - turquoise",
+            "inconsistent_value": "Schmuddelwedda Parka - turquoise"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "2",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "5",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "18",
+            "inconsistent_value": "15"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "filter_length[0]",
+            "original_value": "oberschenkellang",
+            "inconsistent_value": "Oberschenkel-lang"
+          },
+          {
+            "key": "name_de",
+            "original_value": "Parka - turquoise",
+            "inconsistent_value": "Regenjacke / wasserabweisende Jacke - turquoise"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "product_title_de",
+            "original_value": "Schmuddelwedda Parka - turquoise",
+            "inconsistent_value": "Schmuddelwedda Regenjacke / wasserabweisende Jacke - turquoise"
+          },
+          {
+            "key": "short_description_de",
+            "original_value": "Schmuddelwedda Parka - turquoise",
+            "inconsistent_value": "Schmuddelwedda Regenjacke / wasserabweisende Jacke - turquoise"
+          },
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "1",
+            "inconsistent_value": "2"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "1",
+            "inconsistent_value": "5"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "15",
+            "inconsistent_value": "18"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "1MY21D076-C11",
+      "score": 99.2248062015504,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "product_name_de",
+            "original_value": "T",
+            "inconsistent_value": "T-Shirt print"
+          },
+          {
+            "key": "product_name",
+            "original_value": "T",
+            "inconsistent_value": "T-Shirt print"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "5",
+            "inconsistent_value": "4"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "product_name_de",
+            "original_value": "T-Shirt print",
+            "inconsistent_value": "T"
+          },
+          {
+            "key": "product_name",
+            "original_value": "T-Shirt print",
+            "inconsistent_value": "T"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "4",
+            "inconsistent_value": "5"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "BU111B01B-G11",
+      "score": 97.18004338394793,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3110",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3110",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3110",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[3].partnerId",
+            "original_value": "3110",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[4].partnerId",
+            "original_value": "3110",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[5].partnerId",
+            "original_value": "3110",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[6].partnerId",
+            "original_value": "3110",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[6]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3110"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3110"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3110"
+          },
+          {
+            "key": "media$[3].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3110"
+          },
+          {
+            "key": "media$[4].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3110"
+          },
+          {
+            "key": "media$[5].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3110"
+          },
+          {
+            "key": "media$[6].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3110"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[6]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "MU312M000-K11",
+      "score": 96.95121951219512,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "upper_material_t_de",
+            "original_value": "Hochwertiges Lederimitat",
+            "inconsistent_value": "hochwertiges Lederimitat"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3008",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3008",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3008",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[3].partnerId",
+            "original_value": "3008",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[4].partnerId",
+            "original_value": "3008",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[5].partnerId",
+            "original_value": "3008",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "media$[6].partnerId",
+            "original_value": "3008",
+            "inconsistent_value": "3876"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[5]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "upper_material_t_de",
+            "original_value": "hochwertiges Lederimitat",
+            "inconsistent_value": "Hochwertiges Lederimitat"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3008"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3008"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3008"
+          },
+          {
+            "key": "media$[3].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3008"
+          },
+          {
+            "key": "media$[4].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3008"
+          },
+          {
+            "key": "media$[5].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3008"
+          },
+          {
+            "key": "media$[6].partnerId",
+            "original_value": "3876",
+            "inconsistent_value": "3008"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[5]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "ON351D008-Q11",
+      "score": 99.67845659163987,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "2",
+            "inconsistent_value": "3"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "3",
+            "inconsistent_value": "2"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "1MY21D07K-A11",
+      "score": 94.97354497354497,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "size_family[3]",
+            "original_value": "38",
+            "inconsistent_value": "40"
+          },
+          {
+            "key": "size_family[4]",
+            "original_value": "40",
+            "inconsistent_value": "42"
+          },
+          {
+            "key": "size_family[5]",
+            "original_value": "42",
+            "inconsistent_value": "44"
+          },
+          {
+            "key": "sort_new_in_bucket",
+            "original_value": "0",
+            "inconsistent_value": "2"
+          },
+          {
+            "key": "sort_sale_bucket",
+            "original_value": "0",
+            "inconsistent_value": "16"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3374",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3374",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[1]$.sizeFamily[0]",
+            "original_value": "38",
+            "inconsistent_value": "44"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "sort_bucket_variant_A",
+            "original_value": "0",
+            "inconsistent_value": "16"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "size_family[3]",
+            "original_value": "40",
+            "inconsistent_value": "38"
+          },
+          {
+            "key": "size_family[4]",
+            "original_value": "42",
+            "inconsistent_value": "40"
+          },
+          {
+            "key": "size_family[5]",
+            "original_value": "44",
+            "inconsistent_value": "42"
+          },
+          {
+            "key": "sort_new_in_bucket",
+            "original_value": "2",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "sort_sale_bucket",
+            "original_value": "16",
+            "inconsistent_value": "0"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3374"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3374"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[1]$.sizeFamily[0]",
+            "original_value": "44",
+            "inconsistent_value": "38"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "sort_bucket_variant_A",
+            "original_value": "16",
+            "inconsistent_value": "0"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "V1021C0V4-Q11",
+      "score": 98.812351543943,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "6",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "26",
+            "inconsistent_value": "19"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "19",
+            "inconsistent_value": "16"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "simples[0]$.quantity",
+            "original_value": "1",
+            "inconsistent_value": "6"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[2]$.quantity",
+            "original_value": "19",
+            "inconsistent_value": "26"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "16",
+            "inconsistent_value": "19"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "VE121N02H-Q11",
+      "score": 96.72131147540983,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "47",
+            "inconsistent_value": "48"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "31",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "simples[5]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[6]$.quantity",
+            "original_value": "36",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "simples[6]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[8]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[9]$.quantity",
+            "original_value": "11",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "simples[9]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[10]$.quantity",
+            "original_value": "22",
+            "inconsistent_value": "1"
+          },
+          {
+            "key": "simples[11]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[12]$.quantity",
+            "original_value": "15",
+            "inconsistent_value": "4"
+          },
+          {
+            "key": "simples[12]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[13]$.quantity",
+            "original_value": "26",
+            "inconsistent_value": "5"
+          },
+          {
+            "key": "simples[14]$.quantity",
+            "original_value": "14",
+            "inconsistent_value": "5"
+          },
+          {
+            "key": "simples[15]$.quantity",
+            "original_value": "33",
+            "inconsistent_value": "20"
+          },
+          {
+            "key": "simples[16]$.quantity",
+            "original_value": "29",
+            "inconsistent_value": "10"
+          },
+          {
+            "key": "simples[17]$.quantity",
+            "original_value": "32",
+            "inconsistent_value": "23"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "48",
+            "inconsistent_value": "47"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[4]$.quantity",
+            "original_value": "1",
+            "inconsistent_value": "31"
+          },
+          {
+            "key": "simples[5]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[6]$.quantity",
+            "original_value": "1",
+            "inconsistent_value": "36"
+          },
+          {
+            "key": "simples[6]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[8]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[9]$.quantity",
+            "original_value": "1",
+            "inconsistent_value": "11"
+          },
+          {
+            "key": "simples[9]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[10]$.quantity",
+            "original_value": "1",
+            "inconsistent_value": "22"
+          },
+          {
+            "key": "simples[11]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[12]$.quantity",
+            "original_value": "4",
+            "inconsistent_value": "15"
+          },
+          {
+            "key": "simples[12]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[13]$.quantity",
+            "original_value": "5",
+            "inconsistent_value": "26"
+          },
+          {
+            "key": "simples[14]$.quantity",
+            "original_value": "5",
+            "inconsistent_value": "14"
+          },
+          {
+            "key": "simples[15]$.quantity",
+            "original_value": "20",
+            "inconsistent_value": "33"
+          },
+          {
+            "key": "simples[16]$.quantity",
+            "original_value": "10",
+            "inconsistent_value": "29"
+          },
+          {
+            "key": "simples[17]$.quantity",
+            "original_value": "23",
+            "inconsistent_value": "32"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "VE121C184-J11",
+      "score": 98.0225988700565,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "4DR21U00V-Q11",
+      "score": 93.34811529933481,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "size_family[0]",
+            "original_value": "32",
+            "inconsistent_value": "38"
+          },
+          {
+            "key": "size_family[1]",
+            "original_value": "34",
+            "inconsistent_value": "40"
+          },
+          {
+            "key": "size_family[2]",
+            "original_value": "36",
+            "inconsistent_value": "42"
+          },
+          {
+            "key": "size_family[3]",
+            "original_value": "38",
+            "inconsistent_value": "44"
+          },
+          {
+            "key": "size_family[4]",
+            "original_value": "40",
+            "inconsistent_value": "46"
+          },
+          {
+            "key": "size_family[5]",
+            "original_value": "42",
+            "inconsistent_value": "48"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "is_top_10_in_brand_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "brandmisspelled_de",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "top_seller_in_categories_m_de",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3020"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3020"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3020"
+          },
+          {
+            "key": "media$[3].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3020"
+          },
+          {
+            "key": "media$[4].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3020"
+          },
+          {
+            "key": "media$[5].partnerId",
+            "original_value": "3850",
+            "inconsistent_value": "3020"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[0]$.sizeFamily[0]",
+            "original_value": "40",
+            "inconsistent_value": "46"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "64",
+            "inconsistent_value": "63"
+          },
+          {
+            "key": "simples[1]$.sizeFamily[0]",
+            "original_value": "38",
+            "inconsistent_value": "44"
+          },
+          {
+            "key": "simples[2]$.sizeFamily[0]",
+            "original_value": "36",
+            "inconsistent_value": "42"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "65",
+            "inconsistent_value": "64"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[3]$.sizeFamily[0]",
+            "original_value": "42",
+            "inconsistent_value": "48"
+          },
+          {
+            "key": "simples[4]$.sizeFamily[0]",
+            "original_value": "32",
+            "inconsistent_value": "38"
+          },
+          {
+            "key": "simples[4]$.sizeFamily[1]",
+            "original_value": "34",
+            "inconsistent_value": "40"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "size_family[0]",
+            "original_value": "38",
+            "inconsistent_value": "32"
+          },
+          {
+            "key": "size_family[1]",
+            "original_value": "40",
+            "inconsistent_value": "34"
+          },
+          {
+            "key": "size_family[2]",
+            "original_value": "42",
+            "inconsistent_value": "36"
+          },
+          {
+            "key": "size_family[3]",
+            "original_value": "44",
+            "inconsistent_value": "38"
+          },
+          {
+            "key": "size_family[4]",
+            "original_value": "46",
+            "inconsistent_value": "40"
+          },
+          {
+            "key": "size_family[5]",
+            "original_value": "48",
+            "inconsistent_value": "42"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "is_top_10_in_brand_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "media$[0].partnerId",
+            "original_value": "3020",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[1].partnerId",
+            "original_value": "3020",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[2].partnerId",
+            "original_value": "3020",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[3].partnerId",
+            "original_value": "3020",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[4].partnerId",
+            "original_value": "3020",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "media$[5].partnerId",
+            "original_value": "3020",
+            "inconsistent_value": "3850"
+          },
+          {
+            "key": "simples[0]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[0]$.sizeFamily[0]",
+            "original_value": "46",
+            "inconsistent_value": "40"
+          },
+          {
+            "key": "simples[1]$.quantity",
+            "original_value": "63",
+            "inconsistent_value": "64"
+          },
+          {
+            "key": "simples[1]$.sizeFamily[0]",
+            "original_value": "44",
+            "inconsistent_value": "38"
+          },
+          {
+            "key": "simples[2]$.sizeFamily[0]",
+            "original_value": "42",
+            "inconsistent_value": "36"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "64",
+            "inconsistent_value": "65"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[3]$.sizeFamily[0]",
+            "original_value": "48",
+            "inconsistent_value": "42"
+          },
+          {
+            "key": "simples[4]$.sizeFamily[0]",
+            "original_value": "38",
+            "inconsistent_value": "32"
+          },
+          {
+            "key": "simples[4]$.sizeFamily[1]",
+            "original_value": "40",
+            "inconsistent_value": "34"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "4DR21U002-G11",
+      "score": 96.88995215311004,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "filter_length[0]",
+            "original_value": "Oberschenkel-lang",
+            "inconsistent_value": "oberschenkellang"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "brandmisspelled_de",
+            "original_value": "<Array>",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "25",
+            "inconsistent_value": "24"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "filter_length[0]",
+            "original_value": "oberschenkellang",
+            "inconsistent_value": "Oberschenkel-lang"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "simples[1]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[3]$.quantity",
+            "original_value": "24",
+            "inconsistent_value": "25"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          }
+        ]
+      }
+    },
+    {
+      "sku": "VE121I0RZ-G11",
+      "score": 96.08355091383812,
+      "source_solr_stack": {
+        "type_name": "Legacy_Online",
+        "base_url": "https://solr-01-eu-west-1.mop.zalan.do/ad01/select/",
+        "app_domain": "DE",
+        "legacy_stack": true,
+        "online": true
+      },
+      "target_solr_stacks": [
+        {
+          "type_name": "New_Online",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/ad01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": true
+        },
+        {
+          "type_name": "New_Offline",
+          "base_url": "https://solr-master-test-01-eu-central-1.sunseekers-test.zalan.do/offline01/select/",
+          "app_domain": "DE",
+          "legacy_stack": false,
+          "online": false
+        }
+      ],
+      "inconsistencies": {
+        "source_to_target": [
+          {
+            "key": "is_out_of_stock_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "classification_time",
+            "original_value": "5",
+            "inconsistent_value": "<null>"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "is_have_quantity_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 1>",
+            "inconsistent_value": "<Array size 0>"
+          },
+          {
+            "key": "article_status_types_mi",
+            "original_value": "<Array size 4>",
+            "inconsistent_value": "<Array size 3>"
+          }
+        ],
+        "target_to_source": [
+          {
+            "key": "is_out_of_stock_b",
+            "original_value": "true",
+            "inconsistent_value": "false"
+          },
+          {
+            "key": "is_partner_simple_without_special_price_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "is_have_quantity_b",
+            "original_value": "false",
+            "inconsistent_value": "true"
+          },
+          {
+            "key": "simples[2]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[3]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "simples[4]$.partnerStockAvailability",
+            "original_value": "<Array size 0>",
+            "inconsistent_value": "<Array size 1>"
+          },
+          {
+            "key": "article_status_types_mi",
+            "original_value": "<Array size 3>",
+            "inconsistent_value": "<Array size 4>"
+          }
+        ]
+      }
+    }
+  ],
+  "unknown_skus": [
+    "S1X22O01N-G11",
+    "ZZLDJ0005-Q00",
+    "S1X22S008-C11",
+    "JA222O1CB-K11",
+    "S1X22O01Y-C11",
+    "PE321D01A-Q11",
+    "S1X22H015-O11"
+  ]
+}

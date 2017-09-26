@@ -47,7 +47,10 @@ def main():
                                     emailIdToDomain=conf.EMAIL_ID_TO_DOMAIN_DIC)
             workflow1.filterToPocket(conf.GOOGLE_FILTER_CFINANCIAL,
                                      headersToExclude=conf.POCKET_SUBJECT_TO_EXCLUDE_LIST,
-                                     emailIdToDomain=conf.EMAIL_ID_TO_DOMAIN_DIC, debug=conf.DEBUG)
+                                     emailIdToDomain=conf.EMAIL_ID_TO_DOMAIN_DIC, debug=conf.DEBUG, delete=True)
+            workflow1.filterToPocket(conf.GOOGLE_FILTER_CFIN2,
+                                     headersToExclude=conf.POCKET_SUBJECT_TO_EXCLUDE_LIST,
+                                     emailIdToDomain=conf.EMAIL_ID_TO_DOMAIN_DIC, debug=conf.DEBUG, delete=False)
         except Exception as e:
             print("Error has occured while processing: {}".format(e))
             print(exception_to_string(e))
