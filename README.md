@@ -1,5 +1,5 @@
 # GmaiLCleaner
-Cleaning my gmail on the go - using basic rules
+Cleaning my gmail, by adding the content to pocket using basic rules
 
 Some of the rules I am following:
 
@@ -86,14 +86,9 @@ I make no guarantees or warrantees of any kind about the suitability for any pro
 
 #### Credit
 
-https://github.com/abhishekchhibber/Gmail-Api-through-Python/
-
-https://github.com/chris-brown-nz/python-gmail-api
-
-https://github.com/rakanalh/pocket-api
-
-https://github.com/tapanpandita/pocket
-
-https://github.com/NadalVRoMa/Emilidos/blob/2668024f6684724ce123802de5b6c1148bc7751c/main.py
-
-https://github.com/amitkmr/Terminal-Geek/blob/9388cea460ffdc5638841e98bd9c2fd9838dbf15/Terminal%20Gmail/gmail.py
+- https://github.com/abhishekchhibber/Gmail-Api-through-Python/
+- https://github.com/chris-brown-nz/python-gmail-api
+- https://github.com/rakanalh/pocket-api
+- https://github.com/tapanpandita/pocket
+- https://github.com/NadalVRoMa/Emilidos/blob/2668024f6684724ce123802de5b6c1148bc7751c/main.py
+- https://github.com/amitkmr/Terminal-Geek/blob/9388cea460ffdc5638841e98bd9c2fd9838dbf15/Terminal%20Gmail/gmail.py
