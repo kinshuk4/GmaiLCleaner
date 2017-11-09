@@ -54,7 +54,7 @@ class PythonGmailAPI:
 
     def __init__(self, secretJson):
         self.initialize(secretJson)
-        self.cache = LRUCacheDict(max_size=10000, expiration=24 * 60 * 60)  # 24 h cache
+        self.cache = LRUCacheDict(max_size=10000, expiration=18 * 60 * 60)  # 18 h cache
 
     def __get_credentials(self):
         """Gets valid user credentials from storage.

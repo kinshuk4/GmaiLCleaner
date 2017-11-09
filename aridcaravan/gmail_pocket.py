@@ -21,7 +21,7 @@ class GmailPocket:
     def __init__(self, gmailClient, pocketClient):
         self.gmail = gmailClient
         self.pocket = pocketClient
-        self.cache = LRUCacheDict(max_size=10000, expiration=24 * 60 * 60)
+        self.cache = LRUCacheDict(max_size=10000, expiration=18 * 60 * 60)
 
     @staticmethod
     def writeMsgUrls(all_urls):
